@@ -16,7 +16,7 @@ export const routes: Routes = [
         path: 'rooms', component: RoomsComponent, title: `Rooms | ${Constants.APP_NAME_STR1}`
     },
     {
-        path: 'rooms-details/:id', component: RoomDetailsComponent, title: `Room Details | ${Constants.APP_NAME_STR1}`
+        path: 'room-details/:id', component: RoomDetailsComponent, title: `Room Details | ${Constants.APP_NAME_STR1}`
     },
     {
         path: '**', component: NotFoundComponent, title: `404 - Page Not Found | ${Constants.APP_NAME_STR1}`

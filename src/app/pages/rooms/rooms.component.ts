@@ -1,9 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
+import { RoomService } from '../../service/room.service';
 
 @Component({
   selector: 'app-rooms',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.scss'
 })
@@ -11,6 +12,8 @@ export class RoomsComponent {
   // Use your featuredRooms array from the previous step here
   selectedRoom = signal<any[]>([]);
   router = inject(Router);
+  roomService = inject(RoomService);
+
   featuredRooms = [
     {
       id: 1,
@@ -102,5 +105,7 @@ export class RoomsComponent {
 
   selectRoom(room: any) {
     this.selectedRoom.set(room);
+    this.roomService.setSelectedRoom(room); // Set the data in service
+    this.router.navigate(['/room-details', room.id]);
   }
 }

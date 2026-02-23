@@ -1,87 +1,34 @@
-<!-- <div class="container-fluid p-0">
-    <div class="row g-0">
-        <div class="col-md-6">
-            <div class="ratio ratio-1x1 h-100">
-                <img [src]="selectedRoom?.image" class="object-fit-cover" [alt]="selectedRoom?.name">
-            </div>
-        </div>
-
-        <div class="col-md-6 p-4 p-lg-5 position-relative">
-            <button type="button" class="btn-close position-absolute top-0 end-0 m-3 shadow-none"
-                data-bs-dismiss="modal"></button>
-
-            <h6 class="text-primary fw-bold text-uppercase small mb-2">Exclusive Suite</h6>
-            <h2 class="fw-bold mb-3">{{selectedRoom?.name}}</h2>
-
-            <div class="d-flex gap-3 mb-4">
-                <div class="text-center p-2 rounded bg-body-tertiary flex-grow-1">
-                    <i class="bi bi-people fs-4 text-primary"></i>
-                    <div class="small fw-bold">{{selectedRoom?.capacity}}</div>
-                </div>
-                <div class="text-center p-2 rounded bg-body-tertiary flex-grow-1">
-                    <i class="bi bi-arrows-fullscreen fs-4 text-primary"></i>
-                    <div class="small fw-bold">550 sqft</div>
-                </div>
-                <div class="text-center p-2 rounded bg-body-tertiary flex-grow-1">
-                    <i class="bi bi-wifi fs-4 text-primary"></i>
-                    <div class="small fw-bold">Free</div>
-                </div>
-            </div>
-
-            <p class="text-secondary mb-4">{{selectedRoom?.description}}</p>
-
-            <h5 class="fw-bold mb-3">Amenities</h5>
-            <ul class="list-unstyled row g-2 mb-4">
-                <li class="col-6 small"><i class="bi bi-check2-circle text-success me-2"></i>24/7 selectedRoom Service</li>
-                <li class="col-6 small"><i class="bi bi-check2-circle text-success me-2"></i>Mini Bar</li>
-                <li class="col-6 small"><i class="bi bi-check2-circle text-success me-2"></i>Smart TV</li>
-                <li class="col-6 small"><i class="bi bi-check2-circle text-success me-2"></i>Air Conditioning</li>
-            </ul>
-
-            <div class="d-flex align-items-center justify-content-between pt-4 border-top">
-                <div class="h3 mb-0 fw-bold text-primary">${{selectedRoom?.price}} <span
-                        class="fs-6 text-secondary fw-normal">/night</span></div>
-                <button class="btn btn-primary px-5 py-3 rounded-pill fw-bold" data-bs-dismiss="modal">Confirm
-                    Booking</button>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
-
+@if (roomService.selectedRoom()) {
 <section class="selectedRoom-details-wrapper py-5">
     <div class="container py-4">
-        <nav aria-label="breadcrumb" class="mb-4">
+        <nav aria-label="breadcrumb" class="mt-4">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a routerLink="/rooms" class="text-decoration-none">Rooms</a></li>
-                <!-- <li class="breadcrumb-item"><a routerLink="/selectedRooms" class="text-decoration-none">Selected
-                        Rooms</a></li> -->
-                <li class="breadcrumb-item active">{{ selectedRoom?.name }}</li>
+                <li class="breadcrumb-item"><a routerLink="/rooms" class="text-decoration-none">Selected
+                        Rooms</a></li>
+                <li class="breadcrumb-item active">{{ roomService.selectedRoom().name }}</li>
             </ol>
         </nav>
 
         <div class="row g-5">
             <div class="col-lg-7">
                 <div class="main-image-container position-relative rounded-4 overflow-hidden shadow-lg mb-4">
-                    <img [src]="selectedRoom?.image" class="img-fluid w-100" [alt]="selectedRoom?.name">
-                    <div class="image-overlay-tags">
-                        <span class="badge glass-badge"><i class="bi bi-camera me-1"></i> 12 Photos</span>
-                        <span class="badge glass-badge"><i class="bi bi-view-stacked me-1"></i> Virtual Tour</span>
-                    </div>
+                    <img [src]="roomService.selectedRoom().image" class="img-fluid w-100"
+                        [alt]="roomService.selectedRoom().name">
                 </div>
 
-                <div class="row g-3 d-none d-md-flex">
+                <div class="row g-3">
                     <div class="col-4">
-                        <img [src]="selectedRoom?.image"
+                        <img [src]="roomService.selectedRoom().image"
                             class="img-fluid rounded-3 opacity-75 hover-opacity-100 cursor-pointer" alt="Detail 1">
                     </div>
                     <div class="col-4">
-                        <img [src]="selectedRoom?.image"
+                        <img [src]="roomService.selectedRoom().image"
                             class="img-fluid rounded-3 opacity-75 hover-opacity-100 cursor-pointer" alt="Detail 2">
                     </div>
                     <div class="col-4 position-relative">
-                        <img [src]="selectedRoom?.image" class="img-fluid rounded-3 brightness-50" alt="More">
+                        <img [src]="roomService.selectedRoom().image" class="img-fluid rounded-3 brightness-50"
+                            alt="More">
                         <div class="position-absolute top-50 start-50 translate-middle text-white fw-bold">+8</div>
                     </div>
                 </div>
@@ -90,7 +37,7 @@
             <div class="col-lg-5">
                 <div class="sticky-top" style="top: 100px;">
                     <div class="d-flex justify-content-between align-items-start mb-2">
-                        <h1 class="display-5 fw-bold mb-0">{{ selectedRoom?.name }}</h1>
+                        <h1 class="display-5 fw-bold mb-0">{{ roomService.selectedRoom().name }}</h1>
                         <button class="btn btn-outline-secondary rounded-circle shadow-sm"><i
                                 class="bi bi-heart"></i></button>
                     </div>
@@ -102,24 +49,24 @@
                     </div>
 
                     <p class="text-secondary mb-4 fs-5 leading-relaxed">
-                        {{ selectedRoom?.description }}
+                        {{ roomService.selectedRoom().description }}
                     </p>
 
                     <div class="amenity-highlight d-flex flex-wrap gap-3 mb-5">
                         <div class="amenity-item">
-                            <i class="bi bi-people fs-4"></i>
-                            <span>{{ selectedRoom?.capacity }}</span>
+                            <i class="bi bi-people fs-5"></i>
+                            <span>{{ roomService.selectedRoom().capacity }}</span>
                         </div>
                         <div class="amenity-item">
-                            <i class="bi bi-wifi fs-4"></i>
+                            <i class="bi bi-wifi fs-5"></i>
                             <span>Ultra Fast</span>
                         </div>
                         <div class="amenity-item">
-                            <i class="bi bi-snow fs-4"></i>
+                            <i class="bi bi-snow fs-5"></i>
                             <span>Climate Control</span>
                         </div>
                         <div class="amenity-item">
-                            <i class="bi bi-cup-hot fs-4"></i>
+                            <i class="bi bi-cup-hot fs-5"></i>
                             <span>Breakfast Incl.</span>
                         </div>
                     </div>
@@ -127,7 +74,7 @@
                     <div class="booking-card p-4 rounded-4 shadow-sm">
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <div>
-                                <span class="h2 fw-bold text-primary">${{ selectedRoom?.price }}</span>
+                                <span class="h2 fw-bold text-primary">${{ roomService.selectedRoom().price }}</span>
                                 <span class="text-secondary"> / night</span>
                             </div>
                             <span
@@ -146,6 +93,11 @@
         </div>
     </div>
 </section>
-
-
-<pre>{{ selectedRoom | json }}</pre>
+} @else {
+<div class="container py-5 my-5 text-center">
+    <div class="py-5 my-5">
+        <h3>No room selected</h3>
+        <a routerLink="/rooms" class="btn btn-outline-primary mt-3">Back to Rooms</a>
+    </div>
+</div>
+}

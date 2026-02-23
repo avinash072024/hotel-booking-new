@@ -1,10 +1,10 @@
-import { JsonPipe } from '@angular/common';
 import { Component, signal } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { RoomService } from '../../service/room.service';
 
 @Component({
   selector: 'app-room-details',
-  imports: [JsonPipe],
+  imports: [RouterLink],
   templateUrl: './room-details.component.html',
   styleUrl: './room-details.component.scss'
 })
@@ -96,18 +96,20 @@ export class RoomDetailsComponent {
     }
   ];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+    public roomService: RoomService
+  ) { }
 
   ngOnInit() {
     // this.route.paramMap.subscribe(params => {
     //   this.roomId = params.get('id');
     //   this.selectedRoom = this.featuredRooms.find(room => room.id === +this.roomId);
     // });
-    debugger;
-    this.roomId = Number(this.route.snapshot.paramMap.get('id')!);
-    console.log('Room ID:', this.roomId);
-    this.selectedRoom = this.featuredRooms.filter(r => r.id === this.roomId);
-    // this.selectedRoom.set(selectedRoom);
-    console.log('this.selectedRoom:', this.selectedRoom)
+    // debugger;
+    // this.roomId = Number(this.route.snapshot.paramMap.get('id')!);
+    // console.log('Room ID:', this.roomId);
+    // this.selectedRoom = this.featuredRooms.filter(r => r.id === this.roomId);
+    // // this.selectedRoom.set(selectedRoom);
+    // console.log('this.selectedRoom:', this.selectedRoom)
   }
 }
