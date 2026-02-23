@@ -1,0 +1,44 @@
+// Root wrapper to take full viewport height
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; // Ensures footer stays at bottom
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.content-area {
+    flex: 1 0 auto; // Grows to fill space, but doesn't shrink
+    overflow-x: hidden; // Prevents horizontal scroll on mobile animations
+}
+
+// Global responsive padding for router-outlet pages
+.container,
+.container-fluid {
+    padding-right: var(--bs-gutter-x, 1rem);
+    padding-left: var(--bs-gutter-x, 1rem);
+
+    @media (min-width: 992px) {
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+}
+
+// Optional: Smooth fade-in for page transitions
+router-outlet+* {
+    // display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

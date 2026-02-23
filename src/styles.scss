@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+:root {
+    --font-family: "Nunito Sans", sans-serif;
+    --primary: #0066ff;
+    --bg-dark: #0a0a0a;
+    --glass: rgba(255, 255, 255, 0.7);
+}
+
+body {
+    font-family: var(--font-family) !important;
+}

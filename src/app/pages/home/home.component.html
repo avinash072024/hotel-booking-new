@@ -1,0 +1,114 @@
+<section class="hero-section position-relative d-flex align-items-center">
+    <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80"
+            alt="Luxury Hotel" class="hero-image">
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container position-relative z-2 text-white pt-5">
+        <div class="row">
+            <div class="col-lg-8 col-xl-7">
+                <span class="badge rounded-pill bg-primary px-3 py-2 mb-3 animate-up">WELCOME TO LUXESTAY</span>
+                <h1 class="display-3 fw-bold mb-4 animate-up" style="animation-delay: 0.1s;">
+                    Experience Luxury <br> <span class="text-outline-light">Beyond Limits</span>
+                </h1>
+                <p class="lead mb-1 opacity-75 animate-up" style="animation-delay: 0.2s;">
+                    Book your stay at the world's most iconic hotels and enjoy exclusive member benefits starting from
+                    your first night.
+                </p>
+            </div>
+        </div>
+
+        <div class="search-bar-wrapper animate-up" style="animation-delay: 0.3s;">
+            <div class="booking-glass-card shadow-lg">
+                <div class="row g-3 align-items-end">
+                    <div class="col-md-3">
+                        <label class="form-label small fw-bold text-uppercase opacity-75"><i
+                                class="bi bi-geo-alt-fill me-1"></i> Destination</label>
+                        <div class="input-group custom-input">
+                            <select class="form-select bg-transparent border-0">
+                                <option selected>Where are you going?</option>
+                                <option>Maldives</option>
+                                <option>Paris</option>
+                                <option>Tokyo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label small fw-bold text-uppercase opacity-75"><i
+                                class="bi bi-calendar-check me-1"></i> Dates</label>
+                        <input type="date" class="form-control bg-transparent border-0 custom-input">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label small fw-bold text-uppercase opacity-75"><i
+                                class="bi bi-people-fill me-1"></i> Guests</label>
+                        <select class="form-select bg-transparent border-0 custom-input">
+                            <option selected>2 Adults, 1 Child</option>
+                            <option>1 Adult</option>
+                            <option>2 Adults</option>
+                            <option>Large Group</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <button
+                            class="btn btn-primary w-100 py-3 rounded-3 fw-bold text-uppercase d-flex align-items-center justify-content-center gap-2">
+                            <i class="bi bi-search"></i> Search Rooms
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-body-tertiary">
+    <div class="container py-4">
+        <div class="d-flex justify-content-between align-items-end mb-5">
+            <div>
+                <h6 class="text-primary fw-bold text-uppercase">Luxury Living</h6>
+                <h2 class="display-6 fw-bold mb-0">Our Iconic Rooms</h2>
+            </div>
+            <a routerLink="/rooms" class="btn btn-outline-primary rounded-pill px-4">Explore More <i
+                    class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+
+        <div class="row g-4">
+            @for (room of featuredRooms; track room.id) {
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm room-card d-flex flex-column">
+                    <div class="ratio ratio-4x3 overflow-hidden">
+                        <img [src]="room.image" class="card-img-top hover-zoom" [alt]="room.name">
+                        <div class="card-img-overlay p-0">
+                            <span class="badge position-absolute top-0 end-0 m-3 shadow-sm px-3 py-2">
+                                ${{room.price}} <small class="fw-light">/ night</small>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h5 class="fw-bold mb-2">{{room.name}}</h5>
+                        <p class="text-secondary small mb-4 flex-grow-1">
+                            {{room.description}}
+                        </p>
+
+                        <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-3 text-primary small">
+                                <span title="Capacity"><i class="bi bi-person-fill"></i>{{room.capacity}}</span>
+                                <span title="Free WiFi"><i class="bi bi-wifi mx-1"></i>WiFi</span>
+                                <span><i class="bi bi-snow"></i>AC</span>
+                            </div>
+                            <button class="btn btn-sm btn-link text-decoration-none p-0 fw-bold">
+                                Details <i class="bi bi-chevron-right small"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+
+
+<app-testimonials />

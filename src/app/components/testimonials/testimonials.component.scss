@@ -1,0 +1,69 @@
+/* Image Hover Effect */
+.hover-zoom {
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+/* Room Card Enhancements */
+.room-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--bs-body-bg);
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1) !important;
+    }
+}
+
+/* Glassmorphism Testimonial Card */
+.testimonial-card {
+    max-width: 800px;
+    background: rgba(var(--bs-emphasis-color-rgb), 0.03);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.1);
+    position: relative;
+
+    // Transition between themes
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+[data-bs-theme='dark'] .testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+
+.testimonial-card {
+    img {
+        object-fit: cover;
+        border: 3px solid var(--bs-primary);
+        padding: 2px;
+        transition: transform 0.3s ease;
+    }
+
+    &:hover img {
+        transform: rotate(5deg) scale(1.1);
+    }
+
+    .bi-quote {
+        color: var(--bs-primary);
+        display: block;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Ensure the carousel indicators (dots) match your theme */
+.carousel-indicators [data-bs-target] {
+    background-color: var(--bs-primary);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+}

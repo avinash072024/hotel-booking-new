@@ -1,0 +1,38 @@
+<section class="py-5 bg-body">
+    <div class="container py-5 text-center">
+        <h2 class="fw-bold mb-5">What Our Guests Say</h2>
+
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                @for (item of testimonials; track item.id; let first = $first) {
+                <div class="carousel-item" [class.active]="first" data-bs-interval="5000">
+                    <div class="testimonial-card glass-card mx-auto p-5 shadow-lg rounded-4">
+                        <i class="bi bi-quote fs-1 text-primary opacity-50"></i>
+                        <p class="lead fst-italic mb-4">"{{item.text}}"</p>
+                        <div class="d-flex align-items-center justify-content-center gap-3">
+                            <img [src]="item.avatar" class="rounded-circle shadow-sm" width="60" height="60">
+                            <div class="text-start">
+                                <h6 class="fw-bold mb-0">{{item.author}}</h6>
+                                <div class="text-warning small">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                data-bs-slide="prev">
+                <i class="bi bi-chevron-left text-primary fs-2"></i>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                data-bs-slide="next">
+                <i class="bi bi-chevron-right text-primary fs-2"></i>
+            </button>
+        </div>
+    </div>
+</section>

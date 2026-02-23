@@ -1,0 +1,52 @@
+.transition-all {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav.navbar {
+    padding: 1.5rem 0;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+
+    // State when user scrolls down
+    &.scrolled {
+        padding: 0.8rem 0;
+        background: rgba(var(--bs-body-bg-rgb), 0.8); // Theme-aware background
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-link {
+        color: var(--bs-emphasis-color);
+
+        &:hover {
+            color: var(--bs-primary);
+        }
+    }
+}
+
+// Ensure content doesn't hide behind fixed nav if necessary
+// But for Hero sections, you usually want the hero to go behind the nav.
+
+.theme-toggle-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.3s;
+
+    &:hover {
+        background: rgba(var(--bs-emphasis-color-rgb), 0.1);
+    }
+}
+
+.active-link {
+    background: rgba(var(--bs-primary-rgb), 0.1);
+    color: var(--bs-primary) !important;
+    border-radius: 20px;
+    padding-left: 1.2rem !important;
+    padding-right: 1.2rem !important;
+}

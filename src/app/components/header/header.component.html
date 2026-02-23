@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg sticky-top custom-header">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-3 text-uppercase tracking-wider" href="#">
+            <i class="bi bi-building-fill-check me-2 text-primary"></i>{{appName1}}<span
+                class="text-primary text-outline">{{appName2}}</span>
+        </a>
+
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-medium">
+                <!-- <li class="nav-item"><a class="nav-link px-3" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="#">Rooms</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="#">Offers</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="#">Support</a></li> -->
+                @for (item of navLinks; track $index) {
+                    <li class="nav-item"><a class="nav-link px-3" routerLink={item.link} routerLinkActive="active">{{item.label}}</a></li>
+                }
+            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+
+                <div class="theme-switch" (click)="toggleTheme()" role="button">
+                    @if (currentTheme() === 'light') {
+                    <i class="bi bi-moon-stars-fill fs-5 text-secondary"></i>
+                    } @else {
+                    <i class="bi bi-sun-fill fs-5 text-warning"></i>
+                    }
+                </div>
+
+                <div class="dropdown">
+                    <button
+                        class="btn btn-outline-primary rounded-pill px-4 dropdown-toggle d-flex align-items-center gap-2"
+                        type="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle fs-5"></i>
+                        <span class="d-none d-sm-inline">Sign In</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2">
+                        <li><a class="dropdown-item py-2" href="#"><i class="bi bi-person me-2"></i>My Profile</a></li>
+                        <li><a class="dropdown-item py-2" href="#"><i class="bi bi-calendar-check me-2"></i>My
+                                Bookings</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item py-2 text-danger" href="#"><i
+                                    class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
