@@ -1,0 +1,41 @@
+<section class="py-5 bg-body-secondary overflow-hidden">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h6 class="text-primary fw-bold text-uppercase">Exclusive Deals</h6>
+            <h2 class="display-5 fw-bold">Offers & Packages</h2>
+        </div>
+
+        <div class="row g-4 flex-nowrap overflow-auto pb-4 scrollbar-hidden">
+            @for (offer of offers; track offer.id) {
+            <div class="col-11 col-md-6 col-lg-4 flex-shrink-0">
+                <div class="offer-ticket shadow-lg rounded-4 overflow-hidden border-0 h-100">
+                    <div class="position-relative">
+                        <img [src]="offer.image" class="offer-img" [alt]="offer.title">
+                        <div class="offer-badge">{{offer.discount}}</div>
+                    </div>
+
+                    <div class="offer-body p-4 bg-body text-center">
+                        <span class="text-primary small fw-bold text-uppercase ls-wide">{{offer.subtitle}}</span>
+                        <h3 class="fw-bold mt-2 mb-3">{{offer.title}}</h3>
+
+                        <div class="ticket-divider my-4">
+                            <div class="dot left"></div>
+                            <div class="dot right"></div>
+                        </div>
+
+                        <div class="promo-box p-3 rounded-3 border border-dashed mb-3">
+                            <small class="text-secondary d-block mb-1">Use Promo Code</small>
+                            <code class="fs-5 fw-bold text-uppercase text-emphasis">{{offer.code}}</code>
+                        </div>
+
+                        <button class="btn btn-primary w-100 py-3 rounded-pill fw-bold shadow-hover">
+                            Claim Offer
+                        </button>
+                        <p class="small text-secondary mt-3 mb-0">Valid until {{offer.validUntil}}</p>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

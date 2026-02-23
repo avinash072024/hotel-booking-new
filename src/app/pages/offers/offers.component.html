@@ -1,0 +1,119 @@
+<!-- <section class="offers-hero py-5 mt-5 overflow-hidden">
+    <div class="container text-center py-5">
+        <h2 class="display-5 fw-bold mb-3">Exclusive Offers</h2>
+        <p class="text-secondary lead mx-auto" style="max-width: 600px;">
+            Unlock exceptional value with our curated packages designed for every occasion.
+        </p>
+    </div>
+</section>
+
+<div class="container pb-5 overflow-hidden">
+    <div class="row g-4">
+        @for (offer of offers; track offer.id) {
+        <div class="col-12 col-xl-6 overflow-hidden">
+            <div class="offer-card d-flex flex-column flex-md-row rounded-4 overflow-hidden shadow-sm">
+
+                <div class="offer-visual position-relative">
+                    <img [src]="offer.image" [alt]="offer.title" class="offer-img">
+                    <div class="category-tag">{{offer.category}}</div>
+                </div>
+
+                <div class="offer-details p-4 flex-grow-1 d-flex flex-column">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h2 class="h4 fw-bold mb-0">{{offer.title}}</h2>
+                        <span class="text-primary fw-bold fs-5">{{offer.discount}}</span>
+                    </div>
+
+                    <p class="text-secondary small mb-4">
+                        {{offer.description}}
+                    </p>
+
+                    <div class="mt-auto">
+                        <div class="promo-box d-flex align-items-center justify-content-between p-2 rounded-3 mb-3">
+                            <div class="ps-2">
+                                <small class="text-secondary d-block" style="font-size: 0.7rem;">PROMO CODE</small>
+                                <span class="fw-mono fw-bold">{{offer.code}}</span>
+                            </div>
+                            <button (click)="copyToClipboard(offer.code)"
+                                class="btn btn-sm btn-light rounded-pill px-3">
+                                @if (copiedCode() === offer.code) {
+                                <i class="bi bi-check2 text-success"></i> Copied
+                                } @else {
+                                <i class="bi bi-clipboard"></i> Copy
+                                }
+                            </button>
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="small text-secondary"><i class="bi bi-clock me-1"></i> Ends
+                                {{offer.validUntil}}</span>
+                            <button class="btn btn-primary rounded-pill px-4 fw-bold">Book Deal</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ticket-cut d-none d-md-block"></div>
+            </div>
+        </div>
+        }
+    </div>
+</div> -->
+
+
+<section class="offers-hero py-5 mt-5">
+  <div class="container text-center py-5">
+    <!-- <h1 class="display-3 fw-bold mb-3">Exclusive Offers</h1> -->
+    <h2 class="display-5 fw-bold mb-3">Exclusive Offers</h2>
+    <p class="text-secondary lead mx-auto" style="max-width: 600px;">
+      Unlock exceptional value with our curated packages designed for every occasion.
+    </p>
+  </div>
+</section>
+
+<div class="container pb-5">
+  <div class="row g-4">
+    @for (offer of offers; track offer.id) {
+      <div class="col-12 col-xl-6">
+        <div class="offer-card d-flex flex-column flex-md-row rounded-4 shadow-sm overflow-hidden">
+          
+          <div class="offer-visual position-relative">
+            <img [src]="offer.image" [alt]="offer.title" class="offer-img">
+            <!-- <div class="category-tag">{{offer.category}}</div> -->
+          </div>
+
+          <div class="offer-details p-4 flex-grow-1 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h2 class="h4 fw-bold mb-0 text-truncate">{{offer.title}}</h2>
+              <span class="text-primary fw-bold fs-5 text-nowrap ms-2">{{offer.discount}}</span>
+            </div>
+            
+            <p class="text-secondary small mb-4">
+              {{offer.description}}
+            </p>
+
+            <div class="mt-auto">
+              <div class="promo-box d-flex align-items-center justify-content-between p-2 rounded-3 mb-3">
+                <div class="ps-2">
+                  <small class="text-secondary d-block" style="font-size: 0.7rem;">PROMO CODE</small>
+                  <span class="fw-mono fw-bold text-uppercase">{{offer.code}}</span>
+                </div>
+                <button (click)="copyToClipboard(offer.code)" class="btn btn-sm btn-light rounded-pill px-3 shadow-sm">
+                  @if (copiedCode() === offer.code) {
+                    <i class="bi bi-check2 text-success me-1"></i> Copied
+                  } @else {
+                    <i class="bi bi-clipboard me-1"></i> Copy
+                  }
+                </button>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="small text-secondary"><i class="bi bi-clock me-1"></i> Ends {{offer.validUntil}}</span>
+                <button class="btn btn-primary rounded-pill px-4 fw-bold">Book Deal</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

@@ -19,10 +19,10 @@ export class NewHeaderComponent {
   navLinks = [
     { path: '/home', label: 'Home' },
     { path: '/rooms', label: 'Rooms' },
+    { path: '/destinations', label: 'Destinations' },
     { path: '/offers', label: 'Offers' },
     { path: '/support', label: 'Support' },
-    { path: '/about', label: 'About' },
-    { path: '/contact', label: 'Contact' }
+    // { path: '/offers', label: 'ffers' }
   ]
 
   constructor() {

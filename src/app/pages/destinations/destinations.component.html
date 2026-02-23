@@ -1,0 +1,45 @@
+<section class="destinations-hero py-5 mt-5">
+    <div class="container text-center py-5">
+        <h2 class="display-5 fw-bold mb-3">Our Destinations</h2>
+        <p class="lead text-secondary mx-auto" style="max-width: 700px;">
+            From the serene shores of the Maldives to the bustling streets of Tokyo, explore our curated collection of
+            world-class retreats.
+        </p>
+    </div>
+</section>
+
+<div class="container pb-5">
+    <div class="d-flex justify-content-center gap-2 mb-5 flex-wrap">
+        @for (cat of ['All', 'Beach', 'Urban', 'Mountain', 'Tropical']; track cat) {
+        <button (click)="setFilter(cat)"
+            [class]="selectedCategory() === cat ? 'btn btn-primary shadow' : 'btn btn-outline-secondary'"
+            class="rounded-pill px-4 py-2 fw-bold transition-all">
+            {{cat}}
+        </button>
+        }
+    </div>
+
+    <div class="masonry-wrapper">
+        @for (dest of filteredDestinations(); track dest.id) {
+        <div class="masonry-item" [ngClass]="'size-' + dest.size">
+            <div class="dest-card-full rounded-4 overflow-hidden">
+                <img [src]="dest.image" [alt]="dest.name" class="dest-img">
+
+                <div class="dest-overlay-gradient p-4">
+                    <div class="mb-auto">
+                        <span class="badge bg-blur text-white px-3 py-2 rounded-pill mb-2">
+                            {{dest.category}}
+                        </span>
+                    </div>
+
+                    <div class="dest-details">
+                        <h2 class="h3 fw-bold text-white mb-1">{{dest.name}}</h2>
+                        <p class="text-white-50 mb-3">{{dest.rooms}} Unique Properties</p>
+                        <button class="btn btn-light btn-sm rounded-pill px-4 fw-bold">Explore Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

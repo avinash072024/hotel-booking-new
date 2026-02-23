@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { TestimonialsComponent } from '../../components/testimonials/testimonials.component';
 import { RouterLink } from '@angular/router';
+import { DestinationsComponent } from '../../components/destinations/destinations.component';
+import { OffersComponent } from '../../components/offers/offers.component';
 
 @Component({
   selector: 'app-home',
-  imports: [TestimonialsComponent, RouterLink],
+  imports: [TestimonialsComponent, RouterLink, DestinationsComponent, OffersComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
