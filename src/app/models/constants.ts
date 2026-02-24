@@ -1,6 +1,6 @@
 export class Constants {
-    public static APP_NAME_STR1: string = 'Demo';
-    public static APP_NAME_STR2: string = 'Demo';
+    public static APP_NAME_STR1: string = 'Lumina';
+    public static APP_NAME_STR2: string = 'Grand';
     public static APP_NAME: string = `${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`;
 
     public static MOCK_DESTINATIONS_ARR: any = [
@@ -235,7 +235,7 @@ export class Constants {
 
         // INDIAN - SOUTH INDIAN
         { id: 7, name: 'Masala Dosa', price: 10, time: 'Breakfast', cuisine: 'Indian', subCuisine: 'South Indian', type: 'Veg', image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80', desc: 'Crispy rice crepe with potato filling.' },
-        { id: 8, name: 'Chicken Biryani', price: 20, time: 'Lunch', cuisine: 'Indian', subCuisine: 'South Indian', type: 'Non-Veg', image: 'https://images.unsplash.com/photo-1563379091339-03b21bc4a4f8?auto=format&fit=crop&w=800&q=80', desc: 'Fragrant basmati rice with meat.' },
+        { id: 8, name: 'Chicken Biryani', price: 20, time: 'Lunch', cuisine: 'Indian', subCuisine: 'South Indian', type: 'Non-Veg', image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=600&q=80', desc: 'Fragrant basmati rice with meat.' },
         { id: 9, name: 'Fish Fry', price: 19, time: 'Dinner', cuisine: 'Indian', subCuisine: 'South Indian', type: 'Non-Veg', image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80', desc: 'Spicy pan-fried seasonal fish.' },
 
         // CHINESE
