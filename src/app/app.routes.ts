@@ -13,6 +13,8 @@ import { HelpCenterComponent } from './pages/help-center/help-center.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { TermsOfUseComponent } from './pages/terms-of-use/terms-of-use.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { BookingComponent } from './pages/booking/booking.component';
+import { BookingFormComponent } from './pages/booking-form/booking-form.component';
 
 export const routes: Routes = [
     {
@@ -53,6 +55,12 @@ export const routes: Routes = [
     },
     {
         path: 'our-menu', component: MenuComponent, title: `Our Menu | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
+    },
+    {
+        path: 'booking-new', component: BookingComponent, title: `Booking | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
+    },
+    {
+        path: 'booking', component: BookingFormComponent, title: `Booking | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
     },
     {
         path: '**', component: NotFoundComponent, title: `404 - Page Not Found | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`

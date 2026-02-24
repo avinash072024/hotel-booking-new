@@ -1,0 +1,205 @@
+<!-- <section class="booking-page py-5">
+    <div class="container">
+        <div class="row g-4">
+
+            <div class="col-lg-8">
+                <div class="card main-card border-0 shadow-lg rounded-5 bg-body-tertiary">
+                    <div class="card-body p-4 p-md-5">
+
+                        <div class="stepper mb-5 d-flex align-items-center gap-3">
+                            <div class="step-pill" [class.active]="currentStep === 1">1. Guests</div>
+                            <div class="step-line"></div>
+                            <div class="step-pill" [class.active]="currentStep === 2">2. Payment</div>
+                        </div>
+
+                        @if (currentStep === 1) {
+                        <div class="fade-in">
+                            <h2 class="fw-black mb-4">Who's joining us?</h2>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div
+                                        class="guest-card p-4 rounded-4 border bg-body d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">Adults</h6><small class="text-muted">Ages
+                                                13+</small>
+                                        </div>
+                                        <div class="counter">
+                                            <button class="btn btn-sm btn-outline-primary rounded-circle"
+                                                (click)="updateGuest('adults', false)">-</button>
+                                            <span class="fw-bold fs-5 mx-3">{{ guests.adults }}</span>
+                                            <button class="btn btn-sm btn-outline-primary rounded-circle"
+                                                (click)="updateGuest('adults', true)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div
+                                        class="guest-card p-4 rounded-4 border bg-body d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">Children</h6><small class="text-muted">Ages
+                                                2-12</small>
+                                        </div>
+                                        <div class="counter">
+                                            <button class="btn btn-sm btn-outline-primary rounded-circle"
+                                                (click)="updateGuest('children', false)">-</button>
+                                            <span class="fw-bold fs-5 mx-3">{{ guests.children }}</span>
+                                            <button class="btn btn-sm btn-outline-primary rounded-circle"
+                                                (click)="updateGuest('children', true)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+
+                        @if (currentStep === 2) {
+                        <div class="fade-in">
+                            <h2 class="fw-black mb-4">Secure Payment</h2>
+                            <div class="payment-box p-4 rounded-4 border bg-body-secondary text-center">
+                                <i class="bi bi-shield-lock text-primary display-4"></i>
+                                <p class="mt-3 text-secondary">Your payment is encrypted and handled securely.</p>
+                            </div>
+                        </div>
+                        }
+
+                        <div class="d-flex justify-content-between mt-5 pt-4 border-top">
+                            <button class="btn btn-link text-decoration-none fw-bold text-secondary" (click)="back()"
+                                [disabled]="currentStep === 1">PREVIOUS</button>
+                            <button class="btn btn-primary px-5 py-3 rounded-pill fw-bold" (click)="next()">
+                                {{ currentStep === 2 ? 'CONFIRM & PAY' : 'CONTINUE' }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="sticky-top" style="top: 100px;">
+                    <div class="card summary-card border-0 shadow-lg rounded-5 overflow-hidden">
+                        <div class="room-preview position-relative">
+                            <img [src]="roomDetails.image" class="img-fluid" alt="Room">
+                            <div class="price-tag">${{ roomDetails.pricePerNight }}<small>/night</small></div>
+                        </div>
+
+                        <div class="p-4 bg-body">
+                            <h5 class="fw-black mb-1">{{ roomDetails.name }}</h5>
+                            <p class="text-muted small mb-4">{{ roomDetails.type }}</p>
+
+                            <div class="price-breakdown small">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Subtotal</span>
+                                    <span class="fw-bold">${{ subtotal | number:'1.2-2' }}</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Tax (12%)</span>
+                                    <span class="fw-bold">${{ totalTax | number:'1.2-2' }}</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Service Fee</span>
+                                    <span class="fw-bold">${{ serviceFee | number:'1.2-2' }}</span>
+                                </div>
+                                <hr class="opacity-10">
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="h6 fw-black mb-0">Total</span>
+                                    <span class="h3 fw-black text-primary mb-0">${{ finalTotal | number:'1.0-0'
+                                        }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section> -->
+
+
+
+
+<section class="booking-page py-5">
+    <div class="container">
+        <div class="row g-4">
+
+            <div class="col-lg-8">
+                <div class="card glass-card border-0 shadow-lg rounded-5 bg-body-tertiary">
+                    <div class="card-body p-4 p-md-5">
+
+                        <h2 class="fw-black mb-4">Guest Details</h2>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div
+                                    class="counter-box p-3 border rounded-4 d-flex justify-content-between align-items-center bg-body">
+                                    <span>Adults</span>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <button class="btn btn-sm btn-primary rounded-circle"
+                                            (click)="updateGuest('adults', false)">-</button>
+                                        <span class="fw-bold">{{ guests.adults }}</span>
+                                        <button class="btn btn-sm btn-primary rounded-circle"
+                                            (click)="updateGuest('adults', true)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div
+                                    class="counter-box p-3 border rounded-4 d-flex justify-content-between align-items-center bg-body">
+                                    <span>Children</span>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <button class="btn btn-sm btn-primary rounded-circle"
+                                            (click)="updateGuest('children', false)">-</button>
+                                        <span class="fw-bold">{{ guests.children }}</span>
+                                        <button class="btn btn-sm btn-primary rounded-circle"
+                                            (click)="updateGuest('children', true)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 text-end">
+                            <button class="btn btn-primary px-5 py-3 rounded-pill fw-bold" (click)="next()">Continue to
+                                Payment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="sticky-top" style="top: 100px;">
+                    <div class="card border-0 shadow-lg rounded-5 overflow-hidden">
+                        <img [src]="roomDetails.image" class="card-img-top" style="height: 200px; object-fit: cover;">
+
+                        <div class="card-body p-4">
+                            <h5 class="fw-black mb-1">{{ roomDetails.name }}</h5>
+                            <p class="text-muted small border-bottom pb-3">{{ roomDetails.type }}</p>
+
+                            <div class="pricing-list">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-secondary">Base Rate</span>
+                                    <span class="fw-bold">${{ roomDetails.pricePerNight }}</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-secondary">Occupancy Adj.</span>
+                                    <span class="fw-bold text-success">+ ${{ subtotal - roomDetails.pricePerNight
+                                        }}</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-secondary">Tax</span>
+                                    <span class="fw-bold">${{ totalTax | number:'1.2-2' }}</span>
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-black mb-0">Total</span>
+                                    <span class="h2 fw-black text-primary mb-0">${{ finalTotal | number:'1.0-0'
+                                        }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

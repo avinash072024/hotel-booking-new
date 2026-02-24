@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { RoomService } from '../../service/room.service';
+import { Constants } from '../../models/constants';
 
 @Component({
   selector: 'app-rooms',
@@ -14,7 +15,9 @@ export class RoomsComponent {
   router = inject(Router);
   roomService = inject(RoomService);
 
-  featuredRooms = [
+  featuredRooms = Constants.MOCK_ROOMS_ARR;
+
+  featuredRoom = [
     {
       id: 1,
       name: 'Ocean View Suite',

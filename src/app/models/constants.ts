@@ -14,6 +14,99 @@ export class Constants {
         { id: 8, name: 'Paris', category: 'Urban', rooms: 30, size: 'small', image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80' }
     ]
 
+    public static MOCK_ROOMS_ARR: any = [
+        {
+            id: 1,
+            name: 'Ocean View Suite',
+            price: 299,
+            capacity: '2 Guests',
+            image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80',
+            description: 'Experience the sound of waves and panoramic horizons right from your private balcony.',
+            roomType: 'Deluxe Vista',
+        },
+        {
+            id: 2,
+            name: 'Mountain Retreat',
+            price: 199,
+            capacity: '3 Guests',
+            image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80',
+            description: 'Cozy cabin vibes with modern luxury amenities, nestled in the heart of the pines.',
+            roomType: 'Royal Penthouse',
+        },
+        {
+            id: 3,
+            name: 'Presidential Penthouse',
+            price: 850,
+            capacity: '4 Guests',
+            image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80',
+            description: 'The pinnacle of luxury featuring a private infinity pool and 24/7 personal butler service.',
+            roomType: 'Presidential Suite',
+        },
+        {
+            id: 4,
+            name: 'Azure Garden Villa',
+            price: 450,
+            capacity: '5 Guests',
+            image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80',
+            description: 'A secluded sanctuary surrounded by exotic flora with a private terrace garden.',
+            roomType: 'Azure Garden'
+        },
+        {
+            id: 5,
+            name: 'Royal Heritage Room',
+            price: 320,
+            capacity: '2 Guests',
+            image: 'https://images.unsplash.com/photo-1595576508898-0ad5c879a061?auto=format&fit=crop&w=800&q=80',
+            description: 'Classic elegance meets modern technology in our heritage-inspired master suites.',
+            roomType: 'Royal Heritage'
+        },
+        {
+            id: 6,
+            name: 'Skyline Executive',
+            price: 275,
+            capacity: '2 Guests',
+            image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80',
+            description: 'Floor-to-ceiling windows offering breathtaking views of the city skyline.',
+            roomType: 'Skyline Suite'
+        },
+        {
+            id: 7,
+            name: 'Desert Oasis Suite',
+            price: 380,
+            capacity: '2 Guests',
+            image: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80',
+            description: 'Minimalist sand-toned interiors designed for maximum relaxation and peace.',
+            roomType: 'Desert Oasis'
+        },
+        {
+            id: 8,
+            name: 'Lakeside Family Lodge',
+            price: 550,
+            capacity: '6 Guests',
+            image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
+            description: 'The perfect family getaway with spacious living areas and direct lake access.',
+            roomType: 'Lakeside Lodge'
+        },
+        {
+            id: 9,
+            name: 'Golden Sands Studio',
+            price: 150,
+            capacity: '2 Guests',
+            image: 'https://images.unsplash.com/photo-1444201983204-c43cbd584d93?auto=format&fit=crop&w=800&q=80',
+            description: 'Chic, compact, and steps away from the private beach—ideal for solo travelers.',
+            roomType: 'Golden Sands'
+        },
+        {
+            id: 10,
+            name: 'Zen Wellness Suite',
+            price: 420,
+            capacity: '2 Guests',
+            image: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80',
+            description: 'Includes an in-room sauna and aromatherapy system for a complete spa experience.',
+            roomType: 'Zen Wellness'
+        }
+    ];
+
     public static MOCK_OFFERS_ARR: any = [
         {
             id: 1,
@@ -89,140 +182,6 @@ export class Constants {
     ];
 
     public static MOCK_MENU_ARR: any = [
-        // // --- INDIAN: MAHARASHTRIAN ---
-        // {
-        //     id: 1, name: 'Zunka Bhakar', price: 15, time: 'Lunch', cuisine: 'Indian',
-        //     subCuisine: 'Maharashtrian', type: 'Veg',
-        //     image: 'https://images.unsplash.com/photo-1662510255857-4668f49557a5?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Traditional chickpea flour delicacy served with handmade bajra roti and spicy garlic chutney.'
-        // },
-        // {
-        //     id: 2, name: 'Misal Pav', price: 12, time: 'Breakfast', cuisine: 'Indian',
-        //     subCuisine: 'Maharashtrian', type: 'Veg',
-        //     image: 'https://images.unsplash.com/photo-1645177623574-2d1c48737233?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Spicy sprouted bean curry topped with crunchy farsan, served with buttery pav.'
-        // },
-        // {
-        //     id: 3, name: 'Tambda Pandhra', price: 25, time: 'Dinner', cuisine: 'Indian',
-        //     subCuisine: 'Maharashtrian', type: 'Non-Veg',
-        //     image: 'https://images.unsplash.com/photo-1613292443284-8d10ef9383fe?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Kolhapuri style red and white mutton broth, a spice lover’s delight.'
-        // },
-
-        // // --- INDIAN: PUNJABI ---
-        // {
-        //     id: 4, name: 'Butter Chicken', price: 22, time: 'Dinner', cuisine: 'Indian',
-        //     subCuisine: 'Punjabi', type: 'Non-Veg',
-        //     image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Succulent tandoori chicken simmered in a rich, velvety tomato and cream gravy.'
-        // },
-        // {
-        //     id: 5, name: 'Amritsari Kulcha', price: 14, time: 'Breakfast', cuisine: 'Indian',
-        //     subCuisine: 'Punjabi', type: 'Veg',
-        //     image: 'https://images.unsplash.com/photo-1606491956689-2ea8c5119c85?auto=format&fit=crop&w=800&q=80',
-        //     desc: 'Crispy, clay-oven baked bread stuffed with spiced potatoes and served with tangy chole.'
-        // },
-        // {
-        //     id: 6, name: 'Dal Makhani', price: 18, time: 'Lunch', cuisine: 'Indian',
-        //     subCuisine: 'Punjabi', type: 'Veg',
-        //     image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Slow-cooked black lentils and kidney beans finished with white butter and cream.'
-        // },
-
-        // // --- INDIAN: SOUTH INDIAN ---
-        // {
-        //     id: 7, name: 'Masala Dosa', price: 10, time: 'Breakfast', cuisine: 'Indian',
-        //     subCuisine: 'South Indian', type: 'Veg',
-        //     image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Thin rice and lentil crepe stuffed with tempered mashed potatoes and onions.'
-        // },
-        // {
-        //     id: 8, name: 'Chicken Chettinad', price: 20, time: 'Dinner', cuisine: 'Indian',
-        //     subCuisine: 'South Indian', type: 'Non-Veg',
-        //     image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Spicy and aromatic chicken curry prepared with 18 authentic Chettinad spices.'
-        // },
-        // {
-        //     id: 9, name: 'Appam & Stew', price: 16, time: 'Lunch', cuisine: 'Indian',
-        //     subCuisine: 'South Indian', type: 'Veg',
-        //     image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Lacy rice pancakes served with a mild, creamy coconut milk vegetable stew.'
-        // },
-
-        // // --- CHINESE ---
-        // {
-        //     id: 10, name: 'Dim Sum Basket', price: 16, time: 'Breakfast', cuisine: 'Chinese',
-        //     subCuisine: 'Cantonese', type: 'Veg',
-        //     image: 'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Assorted steamed dumplings filled with water chestnuts, corn, and bok choy.'
-        // },
-        // {
-        //     id: 11, name: 'Kung Pao Chicken', price: 19, time: 'Lunch', cuisine: 'Chinese',
-        //     subCuisine: 'Szechuan', type: 'Non-Veg',
-        //     image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Stir-fried chicken cubes with dried chilies, peanuts, and a savory-sweet sauce.'
-        // },
-        // {
-        //     id: 12, name: 'Manchow Soup', price: 12, time: 'Dinner', cuisine: 'Chinese',
-        //     subCuisine: 'Indo-Chinese', type: 'Veg',
-        //     image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'A spicy and tangy vegetable soup topped with crispy fried noodles.'
-        // },
-
-        // // --- ITALIAN ---
-        // {
-        //     id: 13, name: 'Egg Florentine', price: 17, time: 'Breakfast', cuisine: 'Italian',
-        //     subCuisine: 'Tuscan', type: 'Veg',
-        //     image: 'https://images.unsplash.com/photo-1608039755401-742074f0548d?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Poached eggs served over sautéed spinach and toasted artisan ciabatta.'
-        // },
-        // {
-        //     id: 14, name: 'Seafood Marinara', price: 28, time: 'Dinner', cuisine: 'Italian',
-        //     subCuisine: 'Neapolitan', type: 'Non-Veg',
-        //     image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Tagliatelle pasta tossed with fresh mussels, prawns, and calamari in red sauce.'
-        // },
-        // {
-        //     id: 15, name: 'Pesto Gnocchi', price: 21, time: 'Lunch', cuisine: 'Italian',
-        //     subCuisine: 'Genoese', type: 'Veg',
-        //     image: 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Soft potato pillows tossed in a vibrant basil pesto and topped with pine nuts.'
-        // },
-
-        // // --- AMERICAN ---
-        // {
-        //     id: 16, name: 'Buttermilk Pancakes', price: 14, time: 'Breakfast', cuisine: 'American',
-        //     subCuisine: 'Classic', type: 'Veg',
-        //     image: 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Triple-stacked fluffy pancakes served with pure maple syrup and salted butter.'
-        // },
-        // {
-        //     id: 17, name: 'BBQ Bacon Burger', price: 22, time: 'Lunch', cuisine: 'American',
-        //     subCuisine: 'Texas Style', type: 'Non-Veg',
-        //     image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Prime beef patty with hickory smoked bacon, sharp cheddar, and onion rings.'
-        // },
-        // {
-        //     id: 18, name: 'Loaded Nachos', price: 15, time: 'Dinner', cuisine: 'American',
-        //     subCuisine: 'Tex-Mex', type: 'Veg',
-        //     image: 'https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Crispy tortillas topped with molten cheese, jalapeños, and fresh guacamole.'
-        // },
-
-        // // --- BENGALI (Bonus to hit 20) ---
-        // {
-        //     id: 19, name: 'Luchi Alur Dom', price: 13, time: 'Breakfast', cuisine: 'Indian',
-        //     subCuisine: 'Bengali', type: 'Veg',
-        //     image: 'https://images.unsplash.com/photo-1626508035297-0cd27c397d67?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Fluffy fried refined flour bread served with a spiced potato curry.'
-        // },
-        // {
-        //     id: 20, name: 'Machher Jhol', price: 24, time: 'Dinner', cuisine: 'Indian',
-        //     subCuisine: 'Bengali', type: 'Non-Veg',
-        //     image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=600&q=80',
-        //     desc: 'Traditional spicy fish curry cooked with mustard oil and tender potato wedges.'
-        // }
-
         // INDIAN - MAHARASHTRIAN
         { id: 1, name: 'Zunka Bhakar', price: 15, time: 'Lunch', cuisine: 'Indian', subCuisine: 'Maharashtrian', type: 'Veg', image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80', desc: 'Handmade bajra roti with spiced chickpea flour.' },
         { id: 2, name: 'Misal Pav', price: 12, time: 'Breakfast', cuisine: 'Indian', subCuisine: 'Maharashtrian', type: 'Veg', image: 'https://images.pexels.com/photos/17223835/pexels-photo-17223835.jpeg?cs=srgb&dl=pexels-aditya-mara-425995080-17223835.jpg&fm=jpg', desc: 'Spicy moth bean curry with crunchy farsan.' },
