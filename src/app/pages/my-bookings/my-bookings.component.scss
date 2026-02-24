@@ -1,0 +1,82 @@
+.dashboard-wrapper {
+    background-color: var(--bs-body-bg);
+    min-height: 100vh;
+
+    .glass-panel {
+        background: rgba(var(--bs-body-bg-rgb), 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.08) !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+        }
+    }
+
+    .card-image-wrapper {
+        height: 200px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            backdrop-filter: blur(10px);
+        }
+    }
+
+    .booking-card:hover img {
+        transform: scale(1.1);
+    }
+
+    .date-tray {
+        border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.05);
+
+        .text-center span {
+            font-size: 0.9rem;
+        }
+
+        small {
+            font-size: 0.65rem;
+        }
+    }
+
+    // Custom Button Style
+    .btn-danger-subtle {
+        background-color: rgba(var(--bs-danger-rgb), 0.1);
+        color: var(--bs-danger);
+        border: none;
+
+        &:hover {
+            background-color: var(--bs-danger);
+            color: white;
+        }
+    }
+}
+
+// Dark Mode Tweak: Ensure high contrast for status colors
+[data-bs-theme="dark"] {
+    .bg-success-subtle {
+        background-color: rgba(40, 167, 69, 0.2) !important;
+        color: #2ecc71 !important;
+    }
+
+    .bg-warning-subtle {
+        background-color: rgba(255, 193, 7, 0.2) !important;
+        color: #f1c40f !important;
+    }
+}

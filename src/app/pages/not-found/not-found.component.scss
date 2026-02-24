@@ -1,0 +1,76 @@
+.error-section {
+    min-height: 100vh;
+    background-color: var(--bs-body-bg);
+    overflow: hidden;
+    position: relative;
+
+    .error-container {
+        z-index: 2;
+    }
+
+    // Large 404 Background Text
+    .error-code {
+        font-size: clamp(8rem, 20vw, 15rem);
+        line-height: 1;
+        margin-bottom: -2rem;
+        background: linear-gradient(180deg, var(--bs-primary), transparent);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0.15;
+        font-weight: 900;
+        user-select: none;
+        transition: transform 0.1s ease-out;
+    }
+
+    // Glassmorphism Card
+    .glass-content {
+        background: rgba(var(--bs-body-bg-rgb), 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-color: rgba(var(--bs-emphasis-color-rgb), 0.1) !important;
+    }
+
+    // Decorative Background Glow
+    .blob-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 300px;
+        background: var(--bs-primary);
+        filter: blur(120px);
+        opacity: 0.2;
+        z-index: -1;
+        border-radius: 50%;
+    }
+
+    .search-box {
+        max-width: 400px;
+    }
+
+    .letter-spacing-2 {
+        letter-spacing: 2px;
+    }
+
+    .shadow-glow {
+        box-shadow: 0 10px 30px rgba(var(--bs-primary-rgb), 0.3);
+    }
+
+    .btn-primary {
+        transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+// Ensure theme compatibility
+[data-bs-theme="dark"] {
+    .error-code {
+        background: linear-gradient(180deg, #fff, transparent);
+        -webkit-background-clip: text;
+        opacity: 0.05;
+    }
+}

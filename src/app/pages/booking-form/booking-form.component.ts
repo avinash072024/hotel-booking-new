@@ -8,15 +8,17 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './booking-form.component.html',
   styleUrl: './booking-form.component.scss'
 })
-export class BookingFormComponent {
-  currentStep = 1;
+export class BookingFormComponent implements OnInit {
+  currentStep: number = 1;
 
-  // Initial Room Data
-  roomDetails = {
+  // Mock data representing what you'd get from the Room Details page
+  roomInfo = {
     name: 'Oceanic Executive Suite',
     type: 'Penthouse Level',
-    pricePerNight: 450, // This must be a number
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1000'
+    image: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=1000',
+    basePrice: 450, // Price for 1-2 adults
+    extraAdultRate: 50,
+    childRate: 30
   };
 
   guests = {
@@ -24,10 +26,39 @@ export class BookingFormComponent {
     children: 0
   };
 
-  taxRate = 0.12; 
+  bookingData = {
+    fullName: '',
+    email: '',
+    phone: '',
+    requests: ''
+  };
 
-  // Function to handle the clicks
-  updateGuest(type: 'adults' | 'children', increment: boolean) {
+  taxRate = 0.12; // 12%
+
+  ngOnInit(): void {
+    // Logic to pull room data from router state would go here
+  }
+
+  // --- CALCULATION ENGINE ---
+
+  get subtotal(): number {
+    // Logic: Base price + extra for adults over 2 + price per child
+    const extraAdults = this.guests.adults > 2 ? (this.guests.adults - 2) * this.roomInfo.extraAdultRate : 0;
+    const childrenCost = this.guests.children * this.roomInfo.childRate;
+    return Number(this.roomInfo.basePrice) + extraAdults + childrenCost;
+  }
+
+  get taxAmount(): number {
+    return this.subtotal * this.taxRate;
+  }
+
+  get grandTotal(): number {
+    return this.subtotal + this.taxAmount;
+  }
+
+  // --- ACTIONS ---
+
+  updateGuests(type: 'adults' | 'children', increment: boolean) {
     if (increment) {
       this.guests[type]++;
     } else {
@@ -36,23 +67,6 @@ export class BookingFormComponent {
         this.guests[type]--;
       }
     }
-    // Change detection will automatically trigger the getters below
-  }
-
-  // GETTER: This recalculates EVERY time a guest count changes
-  get subtotal(): number {
-    // Optional: Add extra charge per person here if needed
-    // Example: (Base Price) + (Extra Adults * 50)
-    const extraAdultsCharge = (this.guests.adults > 2) ? (this.guests.adults - 2) * 50 : 0;
-    return Number(this.roomDetails.pricePerNight) + extraAdultsCharge;
-  }
-
-  get totalTax(): number {
-    return this.subtotal * this.taxRate;
-  }
-
-  get finalTotal(): number {
-    return this.subtotal + this.totalTax;
   }
 
   next() { this.currentStep = 2; }
