@@ -1,0 +1,129 @@
+.menu-filters {
+    border-bottom: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.05);
+}
+
+/* Tab Button (Time of Day) */
+.btn-tab {
+    background: transparent;
+    border: none;
+    color: var(--bs-secondary-color);
+    font-weight: 700;
+    padding: 8px 20px;
+    position: relative;
+    transition: 0.3s;
+
+    &.active {
+        color: var(--bs-primary);
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--bs-primary);
+            border-radius: 10px;
+        }
+    }
+}
+
+/* Cuisine Buttons */
+.cuisine-btn {
+    background: rgba(var(--bs-emphasis-color-rgb), 0.05);
+    border: 1px solid transparent;
+    padding: 6px 16px;
+    border-radius: 50px;
+    white-space: nowrap;
+    font-weight: 600;
+    transition: 0.3s;
+
+    &.selected {
+        background: var(--bs-primary);
+        color: white;
+    }
+}
+
+/* Diet Pill Switcher */
+.diet-pill {
+    background: rgba(var(--bs-emphasis-color-rgb), 0.05);
+    padding: 4px;
+    border-radius: 50px;
+    display: flex;
+
+    button {
+        border: none;
+        background: transparent;
+        padding: 6px 15px;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--bs-secondary-color);
+
+        &.active {
+            background: var(--bs-body-bg);
+            color: var(--bs-emphasis-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+/* Item Card */
+.item-card {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    .item-img-wrapper {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+
+        .item-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .diet-dot {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 12px;
+            height: 12px;
+            background: #e74c3c; // Non-veg (Red)
+            border: 2px solid white;
+            border-radius: 50%;
+
+            &.veg {
+                background: #27ae60;
+            }
+
+            // Veg (Green)
+        }
+    }
+
+    &:hover {
+        transform: scale(1.03);
+
+        .item-img {
+            transform: scale(1.1);
+        }
+    }
+}
+
+/* Responsive Cleanup */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+
+    .cuisine-bar {
+        justify-content: flex-start !important;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}

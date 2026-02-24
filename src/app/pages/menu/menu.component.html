@@ -1,0 +1,70 @@
+<section class="menu-page py-5 mt-5">
+    <div class="container">
+        <div class="text-center my-5">
+            <!-- <h1 class="display-4 fw-black">Lumina Dining</h1>
+            <p class="text-secondary">Authentic flavors from across the globe</p> -->
+
+            <!-- <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">Our Menu</h6>
+            <h1 class="display-2 fw-black mb-4">{{appName}} Dining</h1>
+            <p class="lead text-secondary mx-auto" style="max-width: 700px;">
+                Authentic flavors from across the globe
+            </p> -->
+
+            <h6 class="text-primary fw-bold text-uppercase ls-wide">Our Menus</h6>
+            <h2 class="display-5 fw-bold mb-3">{{appName}} Dining</h2>
+            <p class="text-secondary">Authentic flavors from across the globe.</p>
+        </div>
+
+        <div class="sticky-top py-3 bg-body z-3 menu-filters">
+            <div class="d-flex justify-content-center gap-2 mb-3">
+                @for (time of ['Breakfast', 'Lunch', 'Dinner']; track time) {
+                <button (click)="selectedTime.set(time)" [class.active]="selectedTime() === time"
+                    class="btn-tab">{{time}}</button>
+                }
+            </div>
+
+            <div class="cuisine-bar d-flex justify-content-center gap-2 py-2 overflow-auto scrollbar-hidden">
+                @for (c of ['Indian', 'Chinese', 'Italian', 'American']; track c) {
+                <button (click)="selectedCuisine.set(c)" [class.selected]="selectedCuisine() === c"
+                    class="cuisine-btn">{{c}}</button>
+                }
+            </div>
+
+            <div class="d-flex justify-content-center mt-3">
+                <div class="diet-pill">
+                    <button (click)="dietaryFilter.set('Veg')" [class.active]="dietaryFilter() === 'Veg'">Veg
+                        Only</button>
+                    <button (click)="dietaryFilter.set('All')" [class.active]="dietaryFilter() === 'All'">All</button>
+                    <button (click)="dietaryFilter.set('Non-Veg')"
+                        [class.active]="dietaryFilter() === 'Non-Veg'">Non-Veg</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+            @for (item of filteredMenu(); track item.id) {
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="item-card rounded-4 border overflow-hidden bg-body shadow-sm h-100">
+                    <div class="item-img-wrapper">
+                        <img [src]="item.image" [alt]="item.name" class="item-img">
+                        <span class="diet-dot" [class.veg]="item.type === 'Veg'"></span>
+                    </div>
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <h3 class="h5 fw-bold mb-0">{{item.name}}</h3>
+                            <span class="fw-bold text-primary">${{item.price}}</span>
+                        </div>
+                        <p class="text-primary small fw-bold mb-3">{{item.subCuisine}}</p>
+                        <p class="text-secondary small mb-0">{{item.desc}}</p>
+                    </div>
+                </div>
+            </div>
+            } @empty {
+            <div class="col-12 text-center py-5">
+                <i class="bi bi-search fs-1 text-muted"></i>
+                <p class="mt-3 text-secondary">No dishes found for this selection.</p>
+            </div>
+            }
+        </div>
+    </div>
+</section>

@@ -8,13 +8,15 @@
 
         <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
             data-bs-target="#headerNav">
-            <span class="navbar-toggler-icon"></span>
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <i class="bi bi-grid-fill"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="headerNav">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-medium">
                 @for (item of navLinks; track $index) {
-                <li class="nav-item"><a class="nav-link px-3" [routerLink]="item.path" routerLinkActive="active-link fw-bold"
+                <li class="nav-item"><a class="nav-link px-3" [routerLink]="item.path"
+                        routerLinkActive="active-link fw-bold"
                         [routerLinkActiveOptions]="{exact: true}">{{item.label}}</a></li>
                 }
             </ul>
@@ -34,7 +36,8 @@
                         <i class="bi bi-person-circle fs-5"></i>
                         <span class="d-none d-sm-inline">Account</span>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg mt-3">
+                    <ul
+                        class="dropdown-menu dropdown-menu-start dropdown-menu-sm-start dropdown-menu-md-start dropdown-menu-lg-end border-0 shadow-lg mt-3">
                         <li><a class="dropdown-item py-2" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
                         <li><a class="dropdown-item py-2" href="#"><i class="bi bi-calendar-check me-2"></i>My
                                 Bookings</a></li>

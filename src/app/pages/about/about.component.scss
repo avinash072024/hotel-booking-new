@@ -1,0 +1,84 @@
+.about-hero {
+    background: var(--bs-body-bg);
+
+    .hero-bg-accent {
+        position: absolute;
+        top: -10%;
+        right: -5%;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(var(--bs-primary-rgb), 0.1) 0%, transparent 70%);
+        z-index: 0;
+    }
+}
+
+.image-stack {
+    .main-img {
+        transition: transform 0.5s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+    .floating-badge {
+        position: absolute;
+        bottom: -30px;
+        right: -20px;
+        min-width: 180px;
+        text-align: center;
+    }
+}
+
+.glass-effect {
+    background: rgba(var(--bs-body-bg-rgb), 0.7);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.1);
+}
+
+.chef-section {
+    background: rgba(var(--bs-emphasis-color-rgb), 0.03);
+
+    .chef-img {
+        height: 450px;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.sus-card {
+    background: var(--bs-body-bg);
+
+    &:hover {
+        border-color: var(--bs-primary) !important;
+        transform: translateY(-10px);
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.08);
+    }
+}
+
+.mb-10 {
+    margin-bottom: 6rem;
+}
+
+.mt-10 {
+    margin-top: 6rem;
+}
+
+// Mobile Adjustments
+@media (max-width: 991px) {
+    .about-hero h1 {
+        font-size: 3rem;
+    }
+
+    .image-stack {
+        margin-bottom: 3rem;
+    }
+
+    .chef-section {
+        margin: 1rem;
+
+        .chef-img {
+            height: 300px;
+        }
+    }
+}
