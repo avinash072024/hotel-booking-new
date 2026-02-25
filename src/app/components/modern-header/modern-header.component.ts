@@ -48,6 +48,18 @@ export class ModernHeaderComponent {
     this.currentTheme.update(t => t === 'light' ? 'dark' : 'light');
   }
 
+  // Helper to close menu programmatically
+  handleNavLinkClick() {
+    if (this.isMenuOpen()) {
+      // Find the toggler button and click it to trigger Bootstrap's collapse
+      const toggler = document.querySelector('.navbar-toggler') as HTMLElement;
+      if (toggler) {
+        toggler.click();
+      }
+      this.isMenuOpen.set(false);
+    }
+  }
+
   toggleMenu() {
     this.isMenuOpen.update(v => !v);
   }

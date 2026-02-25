@@ -133,3 +133,16 @@ nav.navbar {
         transform: translateY(0);
     }
 }
+
+
+
+
+.navbar-collapse {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.collapsing {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.35s ease;
+    }
+}
