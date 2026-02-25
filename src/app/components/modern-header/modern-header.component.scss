@@ -1,0 +1,135 @@
+.transition-all {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav.navbar {
+    padding: 1.5rem 0;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+
+    &.scrolled {
+        padding: 0.8rem 0;
+        background: rgba(var(--bs-body-bg-rgb), 0.8) !important;
+        backdrop-filter: blur(15px) saturate(180%);
+        -webkit-backdrop-filter: blur(15px) saturate(180%);
+        border-bottom: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    // Hamburger Custom Icon
+    .hamburger-icon {
+        width: 24px;
+        height: 18px;
+        position: relative;
+
+        span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: var(--bs-emphasis-color);
+            border-radius: 9px;
+            opacity: 1;
+            left: 0;
+            transition: .25s ease-in-out;
+
+            &:nth-child(1) {
+                top: 0px;
+            }
+
+            &:nth-child(2) {
+                top: 8px;
+            }
+
+            &:nth-child(3) {
+                top: 16px;
+            }
+        }
+
+        &.open span {
+            &:nth-child(1) {
+                top: 8px;
+                transform: rotate(135deg);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+                left: -60px;
+            }
+
+            &:nth-child(3) {
+                top: 8px;
+                transform: rotate(-135deg);
+            }
+        }
+    }
+
+    @media (max-width: 991.98px) {
+        .navbar-collapse {
+            background: rgba(var(--bs-body-bg-rgb), 0.98);
+            margin: 1rem -1rem 0 -1rem;
+            padding: 1.5rem;
+            border-radius: 0 0 25px 25px;
+            border-top: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-link {
+            text-align: center;
+            padding: 0.8rem !important;
+        }
+
+        .active-link {
+            border-radius: 12px;
+        }
+    }
+
+    .nav-link {
+        color: var(--bs-emphasis-color);
+        position: relative;
+
+        &:hover {
+            color: var(--bs-primary);
+        }
+    }
+}
+
+.theme-toggle-btn {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+
+    &:hover {
+        background: rgba(var(--bs-emphasis-color-rgb), 0.1);
+        transform: rotate(15deg);
+    }
+}
+
+.active-link {
+    background: rgba(var(--bs-primary-rgb), 0.1);
+    color: var(--bs-primary) !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    border-radius: 50px;
+}
+
+// Dropdown Animation
+.animate.slideIn {
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

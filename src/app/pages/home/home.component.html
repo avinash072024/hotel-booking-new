@@ -75,7 +75,7 @@
         <div class="row g-4">
             @for (room of featuredRooms; track room.id) {
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 border-0 shadow-sm room-card d-flex flex-column">
+                <div class="card h-100 border-0 shadow-sm room-card d-flex flex-column overflow-hidden">
                     <div class="ratio ratio-4x3 overflow-hidden">
                         <img [src]="room.image" class="card-img-top hover-zoom" [alt]="room.name">
                         <div class="card-img-overlay p-0">
@@ -97,9 +97,9 @@
                                 <span title="Free WiFi"><i class="bi bi-wifi mx-1"></i>WiFi</span>
                                 <span><i class="bi bi-snow"></i>AC</span>
                             </div>
-                            <button class="btn btn-sm btn-link text-decoration-none p-0 fw-bold">
+                            <a routerLink="/rooms" class="btn btn-sm btn-link text-decoration-none p-0 fw-bold">
                                 Details <i class="bi bi-chevron-right small"></i>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>

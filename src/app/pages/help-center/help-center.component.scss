@@ -1,0 +1,92 @@
+.help-center {
+    background-color: var(--bs-body-bg);
+
+    .help-hero {
+        background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.05) 0%, rgba(var(--bs-info-rgb), 0.05) 100%);
+
+        .search-container {
+            max-width: 650px;
+            border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.1);
+        }
+    }
+
+    .category-card {
+        background: rgba(var(--bs-body-bg-rgb), 0.5);
+        backdrop-filter: blur(10px);
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-8px);
+            background: var(--bs-body-bg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+    }
+
+    .faq-item {
+        transition: all 0.3s ease;
+        border-color: rgba(var(--bs-emphasis-color-rgb), 0.1) !important;
+        background: rgba(var(--bs-body-bg-rgb), 0.5);
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+
+            &.show {
+                max-height: 500px;
+                transition: max-height 0.4s ease-in;
+            }
+        }
+
+        &.is-open {
+            border-color: var(--bs-primary) !important;
+            background: var(--bs-body-bg);
+
+            .bi-chevron-down {
+                transform: rotate(180deg);
+                color: var(--bs-primary);
+            }
+        }
+    }
+
+    .btn-white {
+        background: white;
+        color: var(--bs-primary);
+
+        &:hover {
+            background: #f8f9fa;
+        }
+    }
+
+    .btn-outline-white {
+        border: 2px solid white;
+        color: white;
+
+        &:hover {
+            background: white;
+            color: var(--bs-primary);
+        }
+    }
+}
+
+// Dark Mode Tweak
+[data-bs-theme="dark"] {
+    .btn-white {
+        background: #fff;
+        color: #000;
+    }
+
+    .faq-item {
+        background: rgba(255, 255, 255, 0.03);
+    }
+}

@@ -1,1 +1,76 @@
-<p>help-center works!</p>
+<section class="help-center">
+    <div class="help-hero py-5 mb-5 text-center">
+        <div class="container py-5">
+            <h1 class="fw-black display-4 mt-5 mb-3">How can we help?</h1>
+            <div class="search-container mx-auto shadow-lg rounded-pill p-2 bg-body">
+                <div class="input-group">
+                    <span class="input-group-text border-0 bg-transparent ps-4">
+                        <i class="bi bi-search text-primary fs-5"></i>
+                    </span>
+                    <input type="text" class="form-control border-0 shadow-none px-3"
+                        placeholder="Search for articles, bookings, or policies..." [(ngModel)]="searchQuery"
+                        (ngModelChange)="searchQuery.set($event)">
+                    <button class="btn btn-primary rounded-pill px-4 fw-bold">SEARCH</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row g-4 mb-5">
+            @for (cat of categories; track cat.title) {
+            <div class="col-6 col-md-3">
+                <div class="card category-card h-100 border-0 shadow-sm rounded-5 p-3 text-center transition-all">
+                    <div class="icon-box mx-auto mb-3" [ngClass]="'bg-' + cat.color + '-subtle text-' + cat.color">
+                        <i class="bi" [ngClass]="cat.icon"></i>
+                    </div>
+                    <h6 class="fw-bold mb-1">{{ cat.title }}</h6>
+                    <small class="text-muted">{{ cat.count }} Articles</small>
+                </div>
+            </div>
+            }
+        </div>
+
+        <div class="row justify-content-center pb-5">
+            <div class="col-lg-8">
+                <h3 class="fw-black mb-4">Frequently Asked Questions</h3>
+
+                <div class="faq-list d-grid gap-3">
+                    @for (faq of filteredFaqs(); track $index) {
+                    <div class="faq-item glass-card rounded-4 overflow-hidden border" [class.is-open]="faq.open">
+                        <button
+                            class="btn w-100 d-flex justify-content-between align-items-center p-4 border-0 text-start shadow-none"
+                            (click)="toggleFaq($index)">
+                            <span class="fw-bold pe-3">{{ faq.q }}</span>
+                            <i class="bi bi-chevron-down transition-all"></i>
+                        </button>
+                        <div class="faq-answer px-4" [class.show]="faq.open">
+                            <div class="pb-4 text-muted">{{ faq.a }}</div>
+                        </div>
+                    </div>
+                    }
+
+                    @if (filteredFaqs().length === 0) {
+                    <div class="text-center py-5 opacity-50">
+                        <i class="bi bi-emoji-frown display-4"></i>
+                        <p class="mt-2">No results found for "{{ searchQuery() }}"</p>
+                    </div>
+                    }
+                </div>
+
+                <div class="contact-banner mt-5 p-4 p-md-5 rounded-5 bg-primary text-white text-center shadow-lg">
+                    <h4 class="fw-black">Still have questions?</h4>
+                    <p class="opacity-75 mb-4">Our support team is available 24/7 to assist with your journey.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <button class="btn btn-white rounded-pill px-4 fw-bold shadow-sm">
+                            <i class="bi bi-chat-dots-fill me-2"></i>Live Chat
+                        </button>
+                        <button class="btn btn-outline-white rounded-pill px-4 fw-bold">
+                            <i class="bi bi-envelope-fill me-2"></i>Email Us
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

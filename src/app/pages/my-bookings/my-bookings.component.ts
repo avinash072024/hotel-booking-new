@@ -1,6 +1,5 @@
 import { DatePipe, NgClass, UpperCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 interface Booking {
   id: string;
@@ -15,7 +14,7 @@ interface Booking {
 
 @Component({
   selector: 'app-my-bookings',
-  imports: [NgClass, UpperCasePipe, DatePipe, RouterLink],
+  imports: [NgClass, UpperCasePipe, DatePipe],
   templateUrl: './my-bookings.component.html',
   styleUrl: './my-bookings.component.scss'
 })

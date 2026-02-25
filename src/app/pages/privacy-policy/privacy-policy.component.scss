@@ -1,0 +1,65 @@
+.policy-wrapper {
+    background-color: var(--bs-body-bg);
+
+    .glass-card {
+        background: rgba(var(--bs-body-bg-rgb), 0.5);
+        backdrop-filter: blur(10px);
+        border-color: rgba(var(--bs-emphasis-color-rgb), 0.08) !important;
+    }
+
+    // Table of Contents styling
+    .toc-nav {
+        .nav-link {
+            color: var(--bs-secondary-color);
+            padding: 10px 0;
+            font-weight: 500;
+            border-left: 2px solid transparent;
+            padding-left: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+
+            &:hover {
+                color: var(--bs-primary);
+                border-left-color: rgba(var(--bs-primary-rgb), 0.3);
+            }
+        }
+    }
+
+    // Document Content styling
+    .policy-content {
+        line-height: 1.8;
+        color: var(--bs-secondary-color);
+
+        h3 {
+            color: var(--bs-emphasis-color);
+            letter-spacing: -0.5px;
+        }
+
+        strong {
+            color: var(--bs-emphasis-color);
+        }
+    }
+
+    .list-custom {
+        padding-left: 1.2rem;
+
+        li {
+            margin-bottom: 10px;
+
+            &::marker {
+                color: var(--bs-primary);
+            }
+        }
+    }
+
+    .letter-spacing-2 {
+        letter-spacing: 2px;
+    }
+}
+
+// Ensure smooth layout on dark theme
+[data-bs-theme="dark"] {
+    .policy-content {
+        background: rgba(255, 255, 255, 0.02);
+    }
+}

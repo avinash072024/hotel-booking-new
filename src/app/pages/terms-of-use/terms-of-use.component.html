@@ -1,1 +1,93 @@
-<p>terms-of-use works!</p>
+<section class="terms-page py-5 mt-5">
+    <div class="container mt-5">
+
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h1 class="fw-black display-3 mb-3">Terms of Use</h1>
+                <p class="lead text-muted">Please read these terms carefully before using our luxury booking services.
+                </p>
+                <div class="d-flex justify-content-center gap-2 mt-4">
+                    <span class="badge rounded-pill bg-secondary-subtle text-secondary px-3 py-2 border">Version
+                        2.4</span>
+                    <span class="badge rounded-pill bg-info-subtle text-info px-3 py-2 border">Updated: {{ revisionDate | date : "MMMM dd, yyyy"
+                        }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="terms-card glass-card rounded-5 p-4 p-md-5 border shadow-lg">
+
+                    <div class="terms-section mb-5">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="section-number me-3">01</span>
+                            <h3 class="fw-bold mb-0">Acceptance of Terms</h3>
+                        </div>
+                        <div class="summary-box mb-3">
+                            <small class="fw-bold text-uppercase text-primary"><i class="bi bi-lightning-fill"></i>
+                                TL;DR</small>
+                            <p class="mb-0 small">By using this site, you agree to follow our rules. If you don't agree,
+                                please don't use the site.</p>
+                        </div>
+                        <p>By accessing and using this website, you accept and agree to be bound by the terms and
+                            provision of this agreement. In addition, when using these particular services, you shall be
+                            subject to any posted guidelines or rules applicable to such services.</p>
+                    </div>
+
+                    <div class="terms-section mb-5">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="section-number me-3">02</span>
+                            <h3 class="fw-bold mb-0">User Account & Security</h3>
+                        </div>
+                        <div class="summary-box mb-3">
+                            <small class="fw-bold text-uppercase text-primary"><i class="bi bi-lightning-fill"></i>
+                                TL;DR</small>
+                            <p class="mb-0 small">Keep your password safe. You are responsible for everything that
+                                happens on your account.</p>
+                        </div>
+                        <p>If you use this site, you are responsible for maintaining the confidentiality of your account
+                            and password and for restricting access to your computer. We reserve the right to refuse
+                            service, terminate accounts, or cancel orders at our sole discretion.</p>
+                    </div>
+
+                    <div class="terms-section mb-5">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="section-number me-3">03</span>
+                            <h3 class="fw-bold mb-0">Booking & Cancellation</h3>
+                        </div>
+                        <p>All bookings are subject to availability. Cancellation policies vary by room type and
+                            destination. Please review the specific cancellation window provided during the
+                            <strong>Booking Flow</strong> before confirming your reservation.</p>
+                        <div class="alert alert-warning rounded-4 border-0 bg-warning-subtle text-dark mt-3">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                            <strong>Note:</strong> Non-refundable bookings cannot be modified once confirmed.
+                        </div>
+                    </div>
+
+                    <div class="terms-section mb-5">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="section-number me-3">04</span>
+                            <h3 class="fw-bold mb-0">Intellectual Property</h3>
+                        </div>
+                        <p>The content, logos, designs, and images on this platform are the property of Luxury Stay and
+                            are protected by international copyright laws. Unauthorized use of any materials may violate
+                            copyright, trademark, and other laws.</p>
+                    </div>
+
+                    <div class="text-center pt-5 border-top">
+                        <p class="text-muted mb-4">Have questions about these terms?</p>
+                        <div class="d-flex flex-wrap justify-content-center gap-3">
+                            <a routerLink="/help-center" class="btn btn-outline-primary rounded-pill px-4 fw-bold">HELP
+                                CENTER</a>
+                            <button (click)="scrollToTop()" class="btn btn-primary rounded-pill px-4 fw-bold shadow">
+                                <i class="bi bi-arrow-up me-2"></i>BACK TO TOP
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

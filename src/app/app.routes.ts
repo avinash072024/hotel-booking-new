@@ -15,6 +15,7 @@ import { TermsOfUseComponent } from './pages/terms-of-use/terms-of-use.component
 import { MenuComponent } from './pages/menu/menu.component';
 import { BookingFormComponent } from './pages/booking-form/booking-form.component';
 import { MyBookingsComponent } from './pages/my-bookings/my-bookings.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 export const routes: Routes = [
     {
@@ -61,6 +62,9 @@ export const routes: Routes = [
     },
     {
         path: 'my-booking', component: MyBookingsComponent, title: `My Booking | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
+    },
+    {
+        path: 'my-profile', component: MyProfileComponent, title: `My Profile | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
     },
     {
         path: '**', component: NotFoundComponent, title: `404 - Page Not Found | ${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`
