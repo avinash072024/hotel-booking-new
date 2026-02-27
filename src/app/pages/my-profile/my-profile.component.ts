@@ -1,6 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { SessionService } from '../../service/session.service';
 
 @Component({
   selector: 'app-my-profile',
@@ -10,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class MyProfileComponent {
   activeTab = signal<string>('personal');
+  router = inject(Router);
+  sessionService = inject(SessionService);
 
   userProfile = {
     firstName: 'John',
@@ -33,5 +37,10 @@ export class MyProfileComponent {
   saveProfile() {
     console.log('Profile Saved:', this.userProfile);
     // Add your snackbar/toast logic here
+  }
+
+  signOut(){
+    this.sessionService.clearSession();
+    this.router.navigate(['/home']);
   }
 }

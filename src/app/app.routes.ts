@@ -15,10 +15,10 @@ import { TermsOfUseComponent } from './pages/terms-of-use/terms-of-use.component
 import { MenuComponent } from './pages/menu/menu.component';
 import { BookingFormComponent } from './pages/booking-form/booking-form.component';
 import { MyBookingsComponent } from './pages/my-bookings/my-bookings.component';
-import { MyProfileComponent } from './my-profile/my-profile.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { MyProfileComponent } from './pages/my-profile/my-profile.component';
 
 export const routes: Routes = [
     {

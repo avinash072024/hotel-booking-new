@@ -1,20 +1,28 @@
-import { Component, effect, HostListener, signal } from '@angular/core';
+import { Component, effect, HostListener, inject, OnInit, signal } from '@angular/core';
 import { Constants } from '../../models/constants';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { SessionService } from '../../service/session.service';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-modern-header',
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './modern-header.component.html',
-  styleUrl: './modern-header.component.scss'
+  styleUrl: './modern-header.component.scss',
 })
-export class ModernHeaderComponent {
-  currentTheme = signal<string>(localStorage.getItem('theme') || 'light');
+export class ModernHeaderComponent implements OnInit {
+  currentTheme = signal<string>(localStorage.getItem('theme') || 'dark');
   isScrolled = signal<boolean>(false);
   isMenuOpen = signal<boolean>(false); // Track mobile menu state
+  router = inject(Router);
 
   appName1 = Constants.APP_NAME_STR1;
   appName2 = Constants.APP_NAME_STR2;
+
+  sessionService = inject(SessionService);
+  authService = inject(AuthService);
+
+  userDetails: any = null;
 
   navLinks = [
     { path: '/home', label: 'Home' },
@@ -30,6 +38,13 @@ export class ModernHeaderComponent {
       document.documentElement.setAttribute('data-bs-theme', theme);
       localStorage.setItem('theme', theme);
     });
+  }
+
+  ngOnInit(): void {
+    debugger;
+    this.userDetails = this.authService.isAuthenticated() ? this.sessionService.getSession(Constants.userDetails) : null;
+    console.log(this.userDetails);
+    debugger;
   }
 
   @HostListener('window:scroll', [])
@@ -62,5 +77,11 @@ export class ModernHeaderComponent {
 
   toggleMenu() {
     this.isMenuOpen.update(v => !v);
+  }
+
+  signOut() {
+    this.sessionService.clearSession();
+    this.handleNavLinkClick();
+    this.router.navigate(['/home']);
   }
 }

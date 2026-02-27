@@ -4,12 +4,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NewHeaderComponent } from './components/new-header/new-header.component';
 import { ModernHeaderComponent } from './components/modern-header/modern-header.component';
+import { DisableRightClickDirective } from './directives/disable-right-click.directive';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ModernHeaderComponent, FooterComponent],
+  imports: [RouterOutlet, ModernHeaderComponent, FooterComponent, DisableRightClickDirective],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'hotel-booking';
@@ -29,11 +30,15 @@ export class AppComponent {
       event.preventDefault();
     }
 
-    if ((event.ctrlKey && event.key === 'u') || (event.ctrlKey && event.key === 'U')) {
+    if ((event.ctrlKey && event.shiftKey && event.key === 'u') || (event.ctrlKey && event.shiftKey && event.key === 'U')) {
       event.preventDefault();
     }
 
-    if ((event.ctrlKey && event.key === 'p') || (event.ctrlKey && event.key === 'P')) {
+    if ((event.ctrlKey && event.shiftKey && event.key === 'p') || (event.ctrlKey && event.shiftKey && event.key === 'P')) {
+      event.preventDefault();
+    }
+
+    if ((event.ctrlKey && event.shiftKey && event.key === 'c') || (event.ctrlKey && event.shiftKey && event.key === 'C')) {
       event.preventDefault();
     }
 

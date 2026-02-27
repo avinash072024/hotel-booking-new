@@ -2,6 +2,7 @@ export class Constants {
     public static APP_NAME_STR1: string = 'Lumina';
     public static APP_NAME_STR2: string = 'Grand';
     public static APP_NAME: string = `${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`;
+    public static userDetails: string = 'userDetails';
 
     public static MOCK_DESTINATIONS_ARR: any = [
         { id: 1, name: 'Maldives', category: 'Beach', rooms: 12, size: 'large', image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80' },

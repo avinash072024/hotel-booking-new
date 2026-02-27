@@ -6,7 +6,8 @@
                 class="col-lg-6 d-none d-lg-flex flex-column justify-content-between p-5 branding-side position-relative">
                 <div class="z-2">
                     <a routerLink="/" class="auth-logo fw-black fs-3 text-white text-decoration-none">
-                        <i class="bi bi-building-fill-check me-2"></i>{{appName1}}<span class="text-primary-light">{{appName2}}</span>
+                        <i class="bi bi-building-fill-check me-2"></i>{{appName1}}<span
+                            class="text-primary-light">{{appName2}}</span>
                     </a>
                 </div>
 
@@ -36,7 +37,7 @@
                                 class="text-primary fw-bold text-decoration-none">Create an account</a></p>
                     </div>
 
-                    <form (ngSubmit)="onLogin()">
+                    <form autocomplete="off">
                         <div class="form-floating mb-3 custom-input">
                             <input type="email" class="form-control rounded-4" id="email" placeholder="name@example.com"
                                 [(ngModel)]="loginData.email" name="email">
@@ -65,7 +66,7 @@
                                 class="small text-primary fw-bold text-decoration-none">Forgot Password?</a>
                         </div>
 
-                        <button type="submit"
+                        <!-- <button type="submit"
                             class="btn btn-primary w-100 rounded-pill py-3 fw-black shadow-glow d-flex align-items-center justify-content-center gap-2"
                             [disabled]="isLoading()">
                             @if (isLoading()) {
@@ -73,6 +74,11 @@
                             } @else {
                             SIGN IN <i class="bi bi-arrow-right"></i>
                             }
+                        </button> -->
+
+                        <button type="button"
+                            class="btn btn-primary w-100 rounded-pill py-3 fw-black shadow-glow d-flex align-items-center justify-content-center gap-2" (click)="login()">
+                            SIGN IN <i class="bi bi-arrow-right"></i>
                         </button>
 
                         <div class="mt-4 pt-2">

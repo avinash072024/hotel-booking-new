@@ -1,8 +1,9 @@
-import { Component, OnInit, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { CommonModule, Location } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Constants } from '../../models/constants';
+import { SessionService } from '../../service/session.service';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,9 @@ export class LoginComponent implements OnInit {
 
   showPassword = signal<boolean>(false);
   isLoading = signal<boolean>(false);
+  location = inject(Location);
+
+  sessionService = inject(SessionService);
 
   appName1 = Constants.APP_NAME_STR1;
   appName2 = Constants.APP_NAME_STR2;
@@ -39,5 +43,15 @@ export class LoginComponent implements OnInit {
       console.log('Login attempt:', this.loginData);
       this.isLoading.set(false);
     }, 2000);
+  }
+
+  login(): void {
+    this.isLoading.set(true);
+    this.sessionService.setSession(Constants.userDetails, {
+      email: this.loginData.email,
+      name: this.loginData.email.split('@')[0],
+    });
+    this.isLoading.set(false);
+    this.location.back();
   }
 }
