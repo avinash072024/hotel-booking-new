@@ -13,6 +13,6 @@ export class DestinationsComponent implements OnInit {
   destinations: any = Constants.MOCK_DESTINATIONS_ARR;
 
   ngOnInit(): void {
-    this.destinations = this.destinations.slice(0, 5)
+    this.destinations = this.destinations.slice(0, 7)
   }
 }

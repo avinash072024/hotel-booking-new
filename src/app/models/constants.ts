@@ -6,12 +6,16 @@ export class Constants {
     public static MOCK_DESTINATIONS_ARR: any = [
         { id: 1, name: 'Maldives', category: 'Beach', rooms: 12, size: 'large', image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80' },
         { id: 2, name: 'Swiss Alps', category: 'Mountain', rooms: 8, size: 'small', image: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=800&q=80' },
-        { id: 3, name: 'Tokyo', category: 'Urban', rooms: 25, size: 'medium', image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80' },
-        { id: 4, name: 'Santorini', category: 'Beach', rooms: 15, size: 'medium', image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80' },
-        { id: 5, name: 'Bali', category: 'Tropical', rooms: 20, size: 'small', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80' },
-        { id: 6, name: 'Dubai', category: 'Urban', rooms: 40, size: 'large', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80' },
-        { id: 7, name: 'Amalfi Coast', category: 'Beach', rooms: 10, size: 'medium', image: 'https://images.unsplash.com/photo-1612438214708-f428a707dd4e?auto=format&fit=crop&w=800&q=80' },
-        { id: 8, name: 'Paris', category: 'Urban', rooms: 30, size: 'small', image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80' }
+        { id: 3, name: 'Kyoto', category: 'Cultural', rooms: 6, size: 'small', image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80' },
+        { id: 4, name: 'Tokyo', category: 'Urban', rooms: 25, size: 'medium', image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80' },
+        { id: 5, name: 'Santorini', category: 'Beach', rooms: 15, size: 'medium', image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80' },
+        { id: 6, name: 'Bali', category: 'Tropical', rooms: 20, size: 'small', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80' },
+        { id: 7, name: 'Reykjavik', category: 'Arctic', rooms: 5, size: 'small', image: 'https://images.unsplash.com/photo-1520116468816-95b69f847357?auto=format&fit=crop&w=800&q=80' },
+        { id: 8, name: 'Dubai', category: 'Urban', rooms: 40, size: 'large', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80' },
+        { id: 9, name: 'Amalfi Coast', category: 'Beach', rooms: 10, size: 'medium', image: 'https://images.unsplash.com/photo-1612438214708-f428a707dd4e?auto=format&fit=crop&w=800&q=80' },
+        { id: 10, name: 'Paris', category: 'Urban', rooms: 30, size: 'small', image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80' },
+        { id: 11, name: 'Aspen', category: 'Snow', rooms: 7, size: 'small', image: 'https://images.unsplash.com/photo-1547014762-3a94fb4df70a?auto=format&fit=crop&w=800&q=80' }
+
     ]
 
     public static MOCK_ROOMS_ARR: any = [

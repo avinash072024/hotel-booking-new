@@ -1,0 +1,77 @@
+.register-container {
+    min-height: 100vh;
+    background-color: var(--bs-tertiary-bg);
+    padding: 1.5rem;
+
+    .auth-wrapper {
+        background: var(--bs-body-bg);
+        min-height: 750px;
+        border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.05);
+    }
+
+    .branding-side {
+        background: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=2000') center/cover no-repeat;
+
+        .overlay-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(160deg, rgba(var(--bs-primary-rgb), 0.5) 0%, rgba(0, 0, 0, 0.85) 100%);
+            z-index: 1;
+        }
+    }
+
+    .custom-input {
+        .form-control {
+            border: 1.5px solid rgba(var(--bs-emphasis-color-rgb), 0.1);
+            background: var(--bs-body-bg);
+
+            &:focus {
+                border-color: var(--bs-primary);
+                box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.1);
+            }
+        }
+    }
+
+    .custom-check {
+        .form-check-input {
+            border-color: rgba(var(--bs-emphasis-color-rgb), 0.2);
+
+            &:checked {
+                background-color: var(--bs-primary);
+                border-color: var(--bs-primary);
+            }
+        }
+    }
+
+    .text-primary-light {
+        color: #80bfff;
+    }
+
+    .letter-spacing-1 {
+        letter-spacing: 1px;
+    }
+
+    .shadow-glow {
+        box-shadow: 0 10px 30px rgba(var(--bs-primary-rgb), 0.3);
+        transition: all 0.2s ease;
+
+        &:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(var(--bs-primary-rgb), 0.4);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+}
+
+// Mobile specific tweaks
+@media (max-width: 991px) {
+    .auth-wrapper {
+        border-radius: 30px !important;
+    }
+}

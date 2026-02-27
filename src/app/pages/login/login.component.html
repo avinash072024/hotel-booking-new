@@ -1,0 +1,103 @@
+<section class="login-container d-flex align-items-center justify-content-center">
+    <div class="container py-5 my-5">
+        <div class="row g-0 auth-wrapper overflow-hidden shadow-2xl rounded-5">
+
+            <div
+                class="col-lg-6 d-none d-lg-flex flex-column justify-content-between p-5 branding-side position-relative">
+                <div class="z-2">
+                    <a routerLink="/" class="auth-logo fw-black fs-3 text-white text-decoration-none">
+                        <i class="bi bi-building-fill-check me-2"></i>{{appName1}}<span class="text-primary-light">{{appName2}}</span>
+                    </a>
+                </div>
+
+                <div class="z-2 mb-5">
+                    <h1 class="display-4 fw-black text-white mb-3">Welcome <br> Back.</h1>
+                    <p class="text-white-50 lead">Experience the finest destinations with a touch of modern elegance.
+                    </p>
+                </div>
+
+                <div class="glass-footer z-2 p-3 rounded-4 d-flex align-items-center gap-3">
+                    <div class="avatar-group d-flex">
+                        <img src="https://i.pravatar.cc/100?u=1" alt="user">
+                        <img src="https://i.pravatar.cc/100?u=2" alt="user">
+                        <img src="https://i.pravatar.cc/100?u=3" alt="user">
+                    </div>
+                    <small class="text-white">Join 10k+ happy travelers this month.</small>
+                </div>
+
+                <div class="overlay-gradient"></div>
+            </div>
+
+            <div class="col-lg-6 bg-body p-4 p-md-5 d-flex flex-column justify-content-center">
+                <div class="form-content mx-auto w-100" style="max-width: 400px;">
+                    <div class="mb-4">
+                        <h2 class="fw-black mb-1">Sign In</h2>
+                        <p class="text-muted">New here? <a routerLink="/register"
+                                class="text-primary fw-bold text-decoration-none">Create an account</a></p>
+                    </div>
+
+                    <form (ngSubmit)="onLogin()">
+                        <div class="form-floating mb-3 custom-input">
+                            <input type="email" class="form-control rounded-4" id="email" placeholder="name@example.com"
+                                [(ngModel)]="loginData.email" name="email">
+                            <label for="email">Email address</label>
+                        </div>
+
+                        <div class="form-floating mb-3 position-relative custom-input">
+                            <input [type]="showPassword() ? 'text' : 'password'" class="form-control rounded-4"
+                                id="password" placeholder="Password" [(ngModel)]="loginData.password" name="password">
+                            <label for="password">Password</label>
+                            <button type="button"
+                                class="btn btn-link position-absolute end-0 top-50 translate-middle-y text-muted pe-3"
+                                (click)="togglePassword()">
+                                <i class="bi" [class.bi-eye-fill]="!showPassword()"
+                                    [class.bi-eye-slash-fill]="showPassword()"></i>
+                            </button>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-4 px-1">
+                            <div class="form-check">
+                                <input class="form-check-label-input" type="checkbox" id="remember"
+                                    [(ngModel)]="loginData.rememberMe" name="remember">
+                                <label class="form-check-label small text-muted ms-1" for="remember">Remember me</label>
+                            </div>
+                            <a routerLink="/forgot-password"
+                                class="small text-primary fw-bold text-decoration-none">Forgot Password?</a>
+                        </div>
+
+                        <button type="submit"
+                            class="btn btn-primary w-100 rounded-pill py-3 fw-black shadow-glow d-flex align-items-center justify-content-center gap-2"
+                            [disabled]="isLoading()">
+                            @if (isLoading()) {
+                            <span class="spinner-border spinner-border-sm"></span> Signing in...
+                            } @else {
+                            SIGN IN <i class="bi bi-arrow-right"></i>
+                            }
+                        </button>
+
+                        <div class="mt-4 pt-2">
+                            <div class="position-relative text-center mb-4">
+                                <hr class="text-muted opacity-25">
+                                <span
+                                    class="position-absolute top-50 start-50 translate-middle bg-body px-3 small text-muted text-uppercase letter-spacing-1">Or
+                                    continue with</span>
+                            </div>
+
+                            <div class="d-flex gap-3">
+                                <button type="button"
+                                    class="btn btn-outline-secondary w-100 rounded-pill py-2 shadow-sm border-opacity-25">
+                                    <i class="bi bi-google me-2"></i>Google
+                                </button>
+                                <button type="button"
+                                    class="btn btn-outline-secondary w-100 rounded-pill py-2 shadow-sm border-opacity-25">
+                                    <i class="bi bi-apple me-2"></i>Apple
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

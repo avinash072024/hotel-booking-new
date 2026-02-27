@@ -1,0 +1,105 @@
+.login-container {
+    min-height: 100vh;
+    background-color: var(--bs-tertiary-bg);
+    padding: 1.5rem;
+
+    .auth-wrapper {
+        background: var(--bs-body-bg);
+        min-height: 700px;
+        border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.05);
+    }
+
+    // Left Side Styling
+    .branding-side {
+        background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2000') center/cover no-repeat;
+
+        .overlay-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(210deg, rgba(var(--bs-primary-rgb), 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+            z-index: 1;
+        }
+
+        .glass-footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .avatar-group img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-left: -10px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    // Input Styling
+    .custom-input {
+        .form-control {
+            border: 1.5px solid rgba(var(--bs-emphasis-color-rgb), 0.1);
+            background: var(--bs-body-bg);
+            padding-left: 1.25rem;
+
+            &:focus {
+                border-color: var(--bs-primary);
+                box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.1);
+            }
+        }
+
+        label {
+            padding-left: 1.25rem;
+        }
+    }
+
+    .text-primary-light {
+        color: #80bfff;
+    }
+
+    .letter-spacing-1 {
+        letter-spacing: 1px;
+    }
+
+    .shadow-glow {
+        box-shadow: 0 10px 30px rgba(var(--bs-primary-rgb), 0.3);
+        transition: transform 0.2s;
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+
+    .btn-outline-secondary {
+        border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
+
+        &:hover {
+            background-color: rgba(var(--bs-emphasis-color-rgb), 0.05);
+            color: var(--bs-emphasis-color);
+        }
+    }
+}
+
+// Dark Mode Tweak
+[data-bs-theme="dark"] {
+    .login-container {
+        background-color: #0d0d0d;
+    }
+
+    .auth-wrapper {
+        background: #1a1a1a;
+    }
+}
+
+@media (max-width: 991px) {
+    .auth-wrapper {
+        border-radius: 25px !important;
+    }
+}
