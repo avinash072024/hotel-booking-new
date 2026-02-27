@@ -87,3 +87,9 @@
 .amenity-item span {
     margin-left: 5px;
 }
+
+.main-image {
+    transition: transform 0.3s ease;
+    height: 25rem;
+    object-fit: cover;
+}

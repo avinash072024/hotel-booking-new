@@ -1,4 +1,4 @@
-@if (roomService.selectedRoom()) {
+@if (selectedRoom()) {
 <section class="selectedRoom-details-wrapper py-5">
     <div class="container py-4">
         <nav aria-label="breadcrumb" class="mt-4">
@@ -6,28 +6,28 @@
                 <li class="breadcrumb-item"><a routerLink="/rooms" class="text-decoration-none">Rooms</a></li>
                 <li class="breadcrumb-item"><a routerLink="/rooms" class="text-decoration-none">Selected
                         Rooms</a></li>
-                <li class="breadcrumb-item active">{{ roomService.selectedRoom().name }}</li>
+                <li class="breadcrumb-item active">{{ selectedRoom().name }}</li>
             </ol>
         </nav>
 
         <div class="row g-5">
             <div class="col-lg-7">
                 <div class="main-image-container position-relative rounded-4 overflow-hidden shadow-lg mb-4">
-                    <img [src]="roomService.selectedRoom().image" class="img-fluid w-100"
-                        [alt]="roomService.selectedRoom().name">
+                    <img [src]="selectedRoom().image" class="img-fluid w-100 main-image"
+                        [alt]="selectedRoom().name">
                 </div>
 
                 <div class="row g-3">
                     <div class="col-4">
-                        <img [src]="roomService.selectedRoom().image"
+                        <img [src]="selectedRoom().image"
                             class="img-fluid rounded-3 opacity-75 hover-opacity-100 cursor-pointer" alt="Detail 1">
                     </div>
                     <div class="col-4">
-                        <img [src]="roomService.selectedRoom().image"
+                        <img [src]="selectedRoom().image"
                             class="img-fluid rounded-3 opacity-75 hover-opacity-100 cursor-pointer" alt="Detail 2">
                     </div>
                     <div class="col-4 position-relative">
-                        <img [src]="roomService.selectedRoom().image" class="img-fluid rounded-3 brightness-50"
+                        <img [src]="selectedRoom().image" class="img-fluid rounded-3 brightness-50"
                             alt="More">
                         <div class="position-absolute top-50 start-50 translate-middle text-white fw-bold">+8</div>
                     </div>
@@ -37,7 +37,7 @@
             <div class="col-lg-5">
                 <div class="sticky-top" style="top: 100px;">
                     <div class="d-flex justify-content-between align-items-start mb-2">
-                        <h1 class="display-5 fw-bold mb-0">{{ roomService.selectedRoom().name }}</h1>
+                        <h1 class="display-5 fw-bold mb-0">{{ selectedRoom().name }}</h1>
                         <button class="btn btn-outline-secondary rounded-circle shadow-sm"><i
                                 class="bi bi-heart"></i></button>
                     </div>
@@ -49,13 +49,13 @@
                     </div>
 
                     <p class="text-secondary mb-4 fs-5 leading-relaxed">
-                        {{ roomService.selectedRoom().description }}
+                        {{ selectedRoom().description }}
                     </p>
 
                     <div class="amenity-highlight d-flex flex-wrap gap-3 mb-5">
                         <div class="amenity-item">
                             <i class="bi bi-people fs-5"></i>
-                            <span>{{ roomService.selectedRoom().capacity }}</span>
+                            <span>{{ selectedRoom().capacity }}</span>
                         </div>
                         <div class="amenity-item">
                             <i class="bi bi-wifi fs-5"></i>
@@ -74,7 +74,7 @@
                     <div class="booking-card p-4 rounded-4 shadow-sm">
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <div>
-                                <span class="h2 fw-bold text-primary">${{ roomService.selectedRoom().price }}</span>
+                                <span class="h2 fw-bold text-primary">${{ selectedRoom().price }}</span>
                                 <span class="text-secondary"> / night</span>
                             </div>
                             <span
@@ -82,9 +82,9 @@
                                 Now</span>
                         </div>
 
-                        <button class="btn btn-primary w-100 py-3 rounded-pill fw-bold fs-5 shadow">
+                        <a routerLink="/booking" class="btn btn-primary w-100 py-3 rounded-pill fw-bold fs-5 shadow">
                             Proceed to Booking
-                        </button>
+                        </a>
                         <p class="text-center small text-secondary mt-3 mb-0">No credit card required for reservation
                         </p>
                     </div>
