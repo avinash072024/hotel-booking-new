@@ -6,6 +6,12 @@
     --primary: #0066ff;
     --bg-dark: #0a0a0a;
     --glass: rgba(255, 255, 255, 0.7);
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and older */
+    user-select: none;
+    /* Standard syntax */
 }
 
 body {
