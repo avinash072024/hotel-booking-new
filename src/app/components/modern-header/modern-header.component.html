@@ -18,7 +18,7 @@
                 @for (item of navLinks; track $index) {
                 <li class="nav-item">
                     <a class="nav-link px-3 mb-2 mb-lg-0" [routerLink]="item.path"
-                        routerLinkActive="active-link fw-bold" [routerLinkActiveOptions]="{exact: true}"
+                        routerLinkActive="active-link fw-bold" [routerLinkActiveOptions]="{exact: false}"
                         (click)="handleNavLinkClick()">
                         {{item.label}}
                     </a>

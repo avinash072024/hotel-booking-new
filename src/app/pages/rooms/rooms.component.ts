@@ -1,22 +1,31 @@
 import { Component, inject, signal, computed, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { RoomService } from '../../service/room.service';
 import { Constants } from '../../models/constants';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ChefSectionComponent } from '../../components/chef-section/chef-section.component';
 
 @Component({
   selector: 'app-rooms',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, ChefSectionComponent],
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.scss'
 })
 export class RoomsComponent implements OnInit {
   router = inject(Router);
+  route = inject(ActivatedRoute);
   roomService = inject(RoomService);
 
   ngOnInit() {
+    // Read query params
+    this.route.queryParams.subscribe(params => {
+      if (params['destination']) {
+        this.searchTerm.set(params['destination']);
+      }
+    });
+
     // Simulate loading delay
     setTimeout(() => {
       this.isLoading.set(false);
@@ -37,7 +46,9 @@ export class RoomsComponent implements OnInit {
   // Filtered Rooms
   filteredRooms = computed(() => {
     return this.allRooms.filter((room: any) => {
-      const matchesSearch = room.name.toLowerCase().includes(this.searchTerm().toLowerCase());
+      const search = this.searchTerm().toLowerCase();
+      const matchesSearch = room.name.toLowerCase().includes(search) || 
+                           (room.location && room.location.toLowerCase().includes(search));
       const matchesType = this.selectedType() === 'All' || room.roomType === this.selectedType();
       const matchesPrice = room.price <= this.maxPrice();
       return matchesSearch && matchesType && matchesPrice;

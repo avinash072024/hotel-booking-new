@@ -1,16 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { TestimonialsComponent } from '../../components/testimonials/testimonials.component';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { DestinationsComponent } from '../../components/destinations/destinations.component';
 import { OffersComponent } from '../../components/offers/offers.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
-  imports: [TestimonialsComponent, RouterLink, DestinationsComponent, OffersComponent],
+  imports: [TestimonialsComponent, RouterLink, DestinationsComponent, OffersComponent, FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  router = inject(Router);
+
+  destination = signal('Where are you going?');
+  checkInDate = signal('');
+  guests = signal('2 Adults, 1 Child');
+
+  onSearch() {
+    this.router.navigate(['/rooms'], {
+      queryParams: {
+        destination: this.destination() !== 'Where are you going?' ? this.destination() : '',
+        date: this.checkInDate(),
+        guests: this.guests()
+      }
+    });
+  }
+
   featuredRooms = [
     {
       id: 1,

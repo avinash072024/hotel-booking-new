@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Constants } from '../../models/constants';
-import { RouterLink } from '@angular/router';
+import { ChefSectionComponent } from '../../components/chef-section/chef-section.component';
 
 @Component({
   selector: 'app-about',
-  imports: [RouterLink],
+  imports: [ChefSectionComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })

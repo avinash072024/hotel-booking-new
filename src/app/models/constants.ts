@@ -1,6 +1,6 @@
 export class Constants {
-    public static APP_NAME_STR1: string = 'Hotel';
-    public static APP_NAME_STR2: string = 'Booking';
+    public static APP_NAME_STR1: string = 'Grand';
+    public static APP_NAME_STR2: string = 'Deluxe';
     public static APP_NAME: string = `${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`;
     public static userDetails: string = 'userDetails';
 
@@ -25,6 +25,7 @@ export class Constants {
             name: 'Ocean View Suite',
             price: 299,
             capacity: '2 Guests',
+            location: 'Maldives',
             image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80',
             description: 'Experience the sound of waves and panoramic horizons right from your private balcony.',
             roomType: 'Deluxe Vista',
@@ -34,6 +35,7 @@ export class Constants {
             name: 'Mountain Retreat',
             price: 199,
             capacity: '3 Guests',
+            location: 'Swiss Alps',
             image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80',
             description: 'Cozy cabin vibes with modern luxury amenities, nestled in the heart of the pines.',
             roomType: 'Royal Penthouse',
@@ -43,6 +45,7 @@ export class Constants {
             name: 'Presidential Penthouse',
             price: 850,
             capacity: '4 Guests',
+            location: 'Tokyo',
             image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80',
             description: 'The pinnacle of luxury featuring a private infinity pool and 24/7 personal butler service.',
             roomType: 'Presidential Suite',
@@ -52,6 +55,7 @@ export class Constants {
             name: 'Azure Garden Villa',
             price: 450,
             capacity: '5 Guests',
+            location: 'Santorini',
             image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80',
             description: 'A secluded sanctuary surrounded by exotic flora with a private terrace garden.',
             roomType: 'Azure Garden'
@@ -61,6 +65,7 @@ export class Constants {
             name: 'Royal Heritage Room',
             price: 320,
             capacity: '2 Guests',
+            location: 'Kyoto',
             image: 'https://images.unsplash.com/photo-1595576508898-0ad5c879a061?auto=format&fit=crop&w=800&q=80',
             description: 'Classic elegance meets modern technology in our heritage-inspired master suites.',
             roomType: 'Royal Heritage'
@@ -70,6 +75,7 @@ export class Constants {
             name: 'Skyline Executive',
             price: 275,
             capacity: '2 Guests',
+            location: 'Paris',
             image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80',
             description: 'Floor-to-ceiling windows offering breathtaking views of the city skyline.',
             roomType: 'Skyline Suite'
@@ -79,6 +85,7 @@ export class Constants {
             name: 'Desert Oasis Suite',
             price: 380,
             capacity: '2 Guests',
+            location: 'Dubai',
             image: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80',
             description: 'Minimalist sand-toned interiors designed for maximum relaxation and peace.',
             roomType: 'Desert Oasis'
@@ -88,6 +95,7 @@ export class Constants {
             name: 'Lakeside Family Lodge',
             price: 550,
             capacity: '6 Guests',
+            location: 'Reykjavik',
             image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
             description: 'The perfect family getaway with spacious living areas and direct lake access.',
             roomType: 'Lakeside Lodge'
@@ -97,6 +105,7 @@ export class Constants {
             name: 'Golden Sands Studio',
             price: 150,
             capacity: '2 Guests',
+            location: 'Amalfi Coast',
             image: 'https://images.unsplash.com/photo-1444201983204-c43cbd584d93?auto=format&fit=crop&w=800&q=80',
             description: 'Chic, compact, and steps away from the private beach—ideal for solo travelers.',
             roomType: 'Golden Sands'
@@ -106,6 +115,7 @@ export class Constants {
             name: 'Zen Wellness Suite',
             price: 420,
             capacity: '2 Guests',
+            location: 'Bali',
             image: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80',
             description: 'Includes an in-room sauna and aromatherapy system for a complete spa experience.',
             roomType: 'Zen Wellness'
