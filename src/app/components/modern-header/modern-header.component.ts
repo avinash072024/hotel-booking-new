@@ -22,7 +22,7 @@ export class ModernHeaderComponent implements OnInit {
   sessionService = inject(SessionService);
   authService = inject(AuthService);
 
-  userDetails: any = null;
+  userDetails = this.sessionService.currentUser;
 
   navLinks = [
     { path: '/home', label: 'Home' },
@@ -41,10 +41,6 @@ export class ModernHeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    debugger;
-    this.userDetails = this.authService.isAuthenticated() ? this.sessionService.getSession(Constants.userDetails) : null;
-    console.log(this.userDetails);
-    debugger;
   }
 
   @HostListener('window:scroll', [])

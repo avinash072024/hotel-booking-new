@@ -1,6 +1,6 @@
 export class Constants {
-    public static APP_NAME_STR1: string = 'Lumina';
-    public static APP_NAME_STR2: string = 'Grand';
+    public static APP_NAME_STR1: string = 'Hotel';
+    public static APP_NAME_STR2: string = 'Booking';
     public static APP_NAME: string = `${Constants.APP_NAME_STR1} ${Constants.APP_NAME_STR2}`;
     public static userDetails: string = 'userDetails';
 
