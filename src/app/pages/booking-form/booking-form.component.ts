@@ -69,6 +69,28 @@ export class BookingFormComponent implements OnInit {
     }
   }
 
-  next() { this.currentStep = 2; }
-  back() { this.currentStep = 1; }
+  bookingConfirmed: boolean = false;
+  bookingId: string = '';
+
+  next() {
+    if (this.currentStep === 2) {
+      this.confirmBooking();
+    } else {
+      this.currentStep = 2;
+    }
+  }
+
+  back() {
+    if (this.currentStep > 1) {
+      this.currentStep--;
+    }
+  }
+
+  confirmBooking() {
+    // Generate a mock booking ID
+    this.bookingId = 'LB' + Math.random().toString(36).substr(2, 9).toUpperCase();
+    this.bookingConfirmed = true;
+    this.currentStep = 3;
+    console.log('Booking Confirmed:', this.bookingId);
+  }
 }

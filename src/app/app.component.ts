@@ -5,10 +5,12 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NewHeaderComponent } from './components/new-header/new-header.component';
 import { ModernHeaderComponent } from './components/modern-header/modern-header.component';
 import { DisableRightClickDirective } from './directives/disable-right-click.directive';
+import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';
+import { ToasterComponent } from './components/toaster/toaster.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ModernHeaderComponent, FooterComponent, DisableRightClickDirective],
+  imports: [RouterOutlet, ModernHeaderComponent, FooterComponent, DisableRightClickDirective, ScrollTopComponent, ToasterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -16,13 +18,6 @@ export class AppComponent {
   title = 'hotel-booking';
 
   router = inject(Router);
-  showScrollTopButton = false;
-
-  @HostListener('window:scroll', [])
-  onWindowScroll(): void {
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    this.showScrollTopButton = scrollPosition > 200; // Show button when scrolled 200px
-  }
 
   @HostListener('window:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
@@ -48,10 +43,6 @@ export class AppComponent {
   }
 
   constructor() {}
-
-  scrollToTop(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
 
   ngOnInit() {
     this.router.events.subscribe((event: any) => {

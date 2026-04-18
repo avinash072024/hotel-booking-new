@@ -173,3 +173,34 @@
 .object-fit-cover {
     object-fit: cover;
 }
+
+.btn-wishlist {
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+    padding: 0;
+    line-height: 1;
+    transition: transform 0.2s ease;
+    
+    &:hover {
+        transform: scale(1.2);
+    }
+    
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+.filter-sidebar {
+    position: sticky;
+    top: 100px;
+    z-index: 10;
+}
+
+.form-range::-webkit-slider-thumb {
+    background: var(--primary);
+}
+
+.form-range::-moz-range-thumb {
+    background: var(--primary);
+}

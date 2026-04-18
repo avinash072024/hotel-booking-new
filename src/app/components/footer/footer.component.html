@@ -43,8 +43,8 @@
                 <h5 class="fw-bold mb-3">Newsletter</h5>
                 <p class="small text-secondary">Subscribe to get the latest updates and offers.</p>
                 <div class="input-group mb-3 newsletter-group">
-                    <input type="email" class="form-control border-0" placeholder="Your Email">
-                    <button class="btn btn-primary px-3" type="button">
+                    <input type="email" class="form-control border-0" placeholder="Your Email" #emailInput>
+                    <button class="btn btn-primary px-3" type="button" (click)="subscribe(emailInput.value); emailInput.value = ''">
                         <i class="bi bi-send-fill"></i>
                     </button>
                 </div>

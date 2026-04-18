@@ -219,6 +219,30 @@ export class Constants {
 
         // INDIAN - BENGALI
         { id: 19, name: 'Luchi Alur Dom', price: 13, time: 'Breakfast', cuisine: 'Indian', subCuisine: 'Bengali', type: 'Veg', image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&w=800&q=80', desc: 'Bengali fried bread with potato curry.' },
-        { id: 20, name: 'Fish Curry', price: 24, time: 'Dinner', cuisine: 'Indian', subCuisine: 'Bengali', type: 'Non-Veg', image: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80', desc: 'Traditional Bengali style spicy fish.' }
+        { id: 20, name: 'Fish Curry', price: 24, time: 'Dinner', cuisine: 'Indian', subCuisine: 'Bengali', type: 'Non-Veg', image: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80', desc: 'Traditional Bengali style spicy fish.' },
+
+        // NEW ITALIAN ADDITIONS
+        { id: 21, name: 'Spinach Frittata', price: 16, time: 'Breakfast', cuisine: 'Italian', subCuisine: 'Tuscan', type: 'Veg', image: 'https://images.unsplash.com/photo-1510629954389-c1e0da47d415?auto=format&fit=crop&w=800&q=80', desc: 'Italian style omelette with feta and fresh spinach.' },
+        { id: 22, name: 'Margherita Pizza', price: 19, time: 'Lunch', cuisine: 'Italian', subCuisine: 'Neapolitan', type: 'Veg', image: 'https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?auto=format&fit=crop&w=800&q=80', desc: 'San Marzano tomatoes, fresh mozzarella, and basil.' },
+        { id: 23, name: 'Beef Lasagna', price: 26, time: 'Dinner', cuisine: 'Italian', subCuisine: 'Bolognese', type: 'Non-Veg', image: 'https://images.unsplash.com/photo-1619895092538-128341786196?auto=format&fit=crop&w=800&q=80', desc: 'Layered pasta with slow-cooked ragu and bechamel.' },
+
+        // NEW CHINESE ADDITIONS
+        { id: 24, name: 'Century Congee', price: 14, time: 'Breakfast', cuisine: 'Chinese', subCuisine: 'Cantonese', type: 'Non-Veg', image: 'https://images.unsplash.com/photo-1547928576-965ba0fa977b?auto=format&fit=crop&w=800&q=80', desc: 'Warm rice porridge with preserved egg and ginger.' },
+        { id: 25, name: 'Spring Rolls', price: 12, time: 'Lunch', cuisine: 'Chinese', subCuisine: 'Szechuan', type: 'Veg', image: 'https://images.unsplash.com/photo-1544025162-d7609d971a6c?auto=format&fit=crop&w=800&q=80', desc: 'Crispy fried rolls stuffed with garden vegetables.' },
+        { id: 26, name: 'Mapo Tofu', price: 18, time: 'Dinner', cuisine: 'Chinese', subCuisine: 'Szechuan', type: 'Veg', image: 'https://images.unsplash.com/photo-1582234372722-50d7ccc30ebd?auto=format&fit=crop&w=800&q=80', desc: 'Silken tofu in a spicy, numbing chili bean sauce.' },
+
+        // NEW AMERICAN ADDITIONS
+        { id: 27, name: 'Eggs Benedict', price: 18, time: 'Breakfast', cuisine: 'American', subCuisine: 'New York', type: 'Non-Veg', image: 'https://images.unsplash.com/photo-1600335895229-6e755118925f?auto=format&fit=crop&w=800&q=80', desc: 'Poached eggs with hollandaise and Canadian bacon.' },
+        { id: 28, name: 'Club Sandwich', price: 16, time: 'Lunch', cuisine: 'American', subCuisine: 'Classic', type: 'Non-Veg', image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80', desc: 'Triple-decker with turkey, bacon, lettuce, and tomato.' },
+        { id: 29, name: 'BBQ Pork Ribs', price: 32, time: 'Dinner', cuisine: 'American', subCuisine: 'Southern', type: 'Non-Veg', image: 'https://images.unsplash.com/photo-1544025162-d76091230ce3?auto=format&fit=crop&w=800&q=80', desc: 'Fall-off-the-bone ribs with smoky hickory glaze.' },
+
+        // NEW INDIAN ADDITIONS
+        { id: 30, name: 'Idli Sambhar', price: 11, time: 'Breakfast', cuisine: 'Indian', subCuisine: 'South Indian', type: 'Veg', image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80', desc: 'Steamed rice cakes served with lentil stew.' },
+        { id: 31, name: 'Rajasthani Thali', price: 28, time: 'Lunch', cuisine: 'Indian', subCuisine: 'Rajasthani', type: 'Veg', image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80', desc: 'Grand platter with Dal Baati, Churma, and Ker Sangri.' },
+        { id: 32, name: 'Malai Kofta', price: 22, time: 'Dinner', cuisine: 'Indian', subCuisine: 'North Indian', type: 'Veg', image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80', desc: 'Paneer dumplings in a rich cashew nut gravy.' },
+
+        // EXTRA ADDITIONS FOR RICHNESS
+        { id: 33, name: 'Iced Caramel Latte', price: 8, time: 'Breakfast', cuisine: 'American', subCuisine: 'Cafe', type: 'Veg', image: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80', desc: 'Smooth espresso with caramel and cold milk.' },
+        { id: 34, name: 'Truffle Mac & Cheese', price: 24, time: 'Lunch', cuisine: 'American', subCuisine: 'Modern', type: 'Veg', image: 'https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=800&q=80', desc: 'Gourmet pasta with black truffle and five cheeses.' }
     ];
 }
